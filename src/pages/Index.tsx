@@ -13,79 +13,102 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4 py-4">
+      <header className="bg-white shadow-sm border-b relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-blue-50/20 to-gray-50/20 backdrop-blur-sm"
+          style={{
+            backgroundImage:
+              "url(/img/c1622a71-113f-46a5-93d0-958617b847a9.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.15,
+          }}
+        ></div>
+        <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <img
-                src="https://cdn.poehali.dev/files/22c75c8b-ec82-47dc-a5ee-25c1c5743ff5.png"
-                alt="ПФ ОКА"
-                className="h-10 w-10"
-              />
-              <h1 className="text-2xl font-bold text-gray-900">ПФ ОКА</h1>
+            <div className="flex items-center space-x-3">
+              <Icon name="Settings" className="h-14 w-14 text-blue-600" />
+              <h1 className="text-3xl font-bold text-gray-900">ПФ ОКА</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
               <a
                 href="#about"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 О компании
               </a>
               <a
                 href="#products"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Продукция
               </a>
               <a
                 href="#quality"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Качество
               </a>
               <a
                 href="#services"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Услуги
               </a>
               <a
                 href="#careers"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Вакансии
               </a>
               <a
                 href="#contacts"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Контакты
               </a>
             </nav>
-            <Button>Связаться</Button>
+            <Button className="transform hover:scale-105 transition-transform duration-300">
+              Связаться
+            </Button>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-5xl font-bold mb-6 animate-fade-in">
-            Специальная трубопроводная арматура
+      <section className="relative text-white py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/60 to-blue-900/70 z-10"></div>
+        <div className="absolute inset-0 bg-black/30 z-20"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{
+            backgroundImage:
+              "url(/img/d068ea45-6755-438d-8459-4a4264ef0574.jpg)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        ></div>
+        <div className="container mx-auto px-4 text-center relative z-30">
+          <h2 className="text-6xl font-bold mb-8 animate-fade-in drop-shadow-lg">
+            Предприятие ОКА
           </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+          <p className="text-xl mb-12 max-w-3xl mx-auto opacity-95 leading-relaxed drop-shadow-md">
             Разработка и изготовление нестандартных элементов трубопроводов для
             атомных станций, военной промышленности, нефтяной, газовой и
             химической отраслей
           </p>
-          <div className="flex justify-center space-x-4">
-            <Button size="lg" variant="secondary">
+          <div className="flex justify-center space-x-6">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="transform hover:scale-105 transition-all duration-300 shadow-lg"
+            >
               Каталог продукции
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Получить консультацию
             </Button>
@@ -94,8 +117,10 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-4">
+      <section id="about" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               О компании
@@ -106,7 +131,7 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="Award" className="h-12 w-12 text-blue-600 mb-4" />
                 <CardTitle>Опыт работы</CardTitle>
@@ -115,7 +140,7 @@ const Index = () => {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="Shield" className="h-12 w-12 text-blue-600 mb-4" />
                 <CardTitle>Сертификация</CardTitle>
@@ -124,7 +149,7 @@ const Index = () => {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="Users" className="h-12 w-12 text-blue-600 mb-4" />
                 <CardTitle>Команда</CardTitle>
@@ -138,8 +163,13 @@ const Index = () => {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section
+        id="products"
+        className="py-20 bg-white relative overflow-hidden"
+      >
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/20 to-white"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Продукция</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -148,7 +178,7 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="Zap" className="h-8 w-8 text-blue-600 mb-2" />
                 <CardTitle className="text-lg">Для АЭС</CardTitle>
@@ -160,7 +190,7 @@ const Index = () => {
                 <Badge variant="secondary">Высокая надёжность</Badge>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="Wrench" className="h-8 w-8 text-blue-600 mb-2" />
                 <CardTitle className="text-lg">Военная</CardTitle>
@@ -172,7 +202,7 @@ const Index = () => {
                 <Badge variant="secondary">Секретность</Badge>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="Fuel" className="h-8 w-8 text-blue-600 mb-2" />
                 <CardTitle className="text-lg">Нефтегаз</CardTitle>
@@ -184,7 +214,7 @@ const Index = () => {
                 <Badge variant="secondary">Износостойкость</Badge>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="Beaker" className="h-8 w-8 text-blue-600 mb-2" />
                 <CardTitle className="text-lg">Химическая</CardTitle>
@@ -201,8 +231,10 @@ const Index = () => {
       </section>
 
       {/* Quality Section */}
-      <section id="quality" className="py-20">
-        <div className="container mx-auto px-4">
+      <section id="quality" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Качество</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -253,8 +285,13 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section
+        id="services"
+        className="py-20 bg-white relative overflow-hidden"
+      >
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/20 to-white"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Услуги</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -262,7 +299,7 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="PenTool" className="h-12 w-12 text-blue-600 mb-4" />
                 <CardTitle>Проектирование</CardTitle>
@@ -273,7 +310,7 @@ const Index = () => {
                 </p>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="Cog" className="h-12 w-12 text-blue-600 mb-4" />
                 <CardTitle>Производство</CardTitle>
@@ -285,7 +322,7 @@ const Index = () => {
                 </p>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <Icon name="Truck" className="h-12 w-12 text-blue-600 mb-4" />
                 <CardTitle>Поставка</CardTitle>
@@ -301,8 +338,10 @@ const Index = () => {
       </section>
 
       {/* Careers Section */}
-      <section id="careers" className="py-20">
-        <div className="container mx-auto px-4">
+      <section id="careers" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Вакансии</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -310,7 +349,7 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Icon name="Briefcase" className="h-6 w-6 text-blue-600" />
@@ -329,7 +368,7 @@ const Index = () => {
                 </Button>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Icon name="HardHat" className="h-6 w-6 text-blue-600" />
@@ -407,11 +446,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <img
-                src="https://cdn.poehali.dev/files/22c75c8b-ec82-47dc-a5ee-25c1c5743ff5.png"
-                alt="ПФ ОКА"
-                className="h-8 w-8"
-              />
+              <Icon name="Settings" className="h-6 w-6 text-blue-400" />
               <span className="text-xl font-bold">ПФ ОКА</span>
             </div>
             <p className="text-gray-400 text-sm">
