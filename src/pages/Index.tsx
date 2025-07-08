@@ -18,7 +18,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Icon name="Settings" className="h-8 w-8 text-blue-600" />
-              <h1 className="text-2xl font-bold text-gray-900">ТрубоПром</h1>
+              <h1 className="text-2xl font-bold text-gray-900">ПФ ОКА</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
               <a
@@ -404,10 +404,10 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <Icon name="Settings" className="h-6 w-6 text-blue-400" />
-              <span className="text-xl font-bold">ТрубоПром</span>
+              <span className="text-xl font-bold">ПФ ОКА</span>
             </div>
             <p className="text-gray-400 text-sm">
-              © 2024 ТрубоПром. Все права защищены.
+              © 2024 ПФ ОКА. Все права защищены.
             </p>
           </div>
         </div>
