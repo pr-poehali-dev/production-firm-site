@@ -17,7 +17,11 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Icon name="Settings" className="h-8 w-8 text-blue-600" />
+              <img
+                src="https://cdn.poehali.dev/files/22c75c8b-ec82-47dc-a5ee-25c1c5743ff5.png"
+                alt="ПФ ОКА"
+                className="h-10 w-10"
+              />
               <h1 className="text-2xl font-bold text-gray-900">ПФ ОКА</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
@@ -403,7 +407,11 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <Icon name="Settings" className="h-6 w-6 text-blue-400" />
+              <img
+                src="https://cdn.poehali.dev/files/22c75c8b-ec82-47dc-a5ee-25c1c5743ff5.png"
+                alt="ПФ ОКА"
+                className="h-8 w-8"
+              />
               <span className="text-xl font-bold">ПФ ОКА</span>
             </div>
             <p className="text-gray-400 text-sm">
