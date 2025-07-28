@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,8 +9,26 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Index = () => {
+  const [openModal, setOpenModal] = useState<string | null>(null);
+
+  const handleOpenModal = (modalId: string) => {
+    setOpenModal(modalId);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(null);
+  };
+
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
@@ -83,7 +102,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
             backgroundImage:
-              "url(/img/d068ea45-6755-438d-8459-4a4264ef0574.jpg)",
+              "url(https://cdn.poehali.dev/files/24d481a7-869a-4f86-9dab-8ce869cf7f35.jpg)",
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
@@ -178,54 +197,213 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
-              <CardHeader>
-                <Icon name="Zap" className="h-8 w-8 text-blue-600 mb-2" />
-                <CardTitle className="text-lg">Для АЭС</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600 mb-3">
-                  Арматура для атомных электростанций
-                </p>
-                <Badge variant="secondary">Высокая надёжность</Badge>
-              </CardContent>
-            </Card>
-            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
-              <CardHeader>
-                <Icon name="Wrench" className="h-8 w-8 text-blue-600 mb-2" />
-                <CardTitle className="text-lg">Военная</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600 mb-3">
-                  Специализированная арматура для оборонных объектов
-                </p>
-                <Badge variant="secondary">Секретность</Badge>
-              </CardContent>
-            </Card>
-            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
-              <CardHeader>
-                <Icon name="Fuel" className="h-8 w-8 text-blue-600 mb-2" />
-                <CardTitle className="text-lg">Нефтегаз</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600 mb-3">
-                  Арматура для нефтяной и газовой промышленности
-                </p>
-                <Badge variant="secondary">Износостойкость</Badge>
-              </CardContent>
-            </Card>
-            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
-              <CardHeader>
-                <Icon name="Beaker" className="h-8 w-8 text-blue-600 mb-2" />
-                <CardTitle className="text-lg">Химическая</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600 mb-3">
-                  Арматура для химических производств
-                </p>
-                <Badge variant="secondary">Коррозионная стойкость</Badge>
-              </CardContent>
-            </Card>
+            <Dialog open={openModal === 'aes'} onOpenChange={(open) => open ? handleOpenModal('aes') : handleCloseModal()}>
+              <DialogTrigger asChild>
+                <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300 cursor-pointer">
+                  <CardHeader>
+                    <Icon name="Zap" className="h-8 w-8 text-blue-600 mb-2" />
+                    <CardTitle className="text-lg">Для АЭС</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600 mb-3">
+                      Арматура для атомных электростанций
+                    </p>
+                    <Badge variant="secondary">Высокая надёжность</Badge>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center space-x-2">
+                    <Icon name="Zap" className="h-6 w-6 text-blue-600" />
+                    <span>Арматура для АЭС</span>
+                  </DialogTitle>
+                  <DialogDescription className="text-base leading-relaxed">
+                    Специализированная трубопроводная арматура для атомных электростанций
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2">Характеристики:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <li>Повышенная радиационная стойкость</li>
+                      <li>Температурный диапазон: -60°C до +350°C</li>
+                      <li>Рабочее давление до 16 МПа</li>
+                      <li>Класс безопасности 1-4 по НП-001</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Применение:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <li>Первый контур реакторных установок</li>
+                      <li>Системы аварийного охлаждения</li>
+                      <li>Парогенераторные установки</li>
+                      <li>Системы очистки теплоносителя</li>
+                    </ul>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Badge variant="secondary">ГОСТ 356-80</Badge>
+                    <Badge variant="secondary">ОПБ-88/97</Badge>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={openModal === 'military'} onOpenChange={(open) => open ? handleOpenModal('military') : handleCloseModal()}>
+              <DialogTrigger asChild>
+                <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300 cursor-pointer">
+                  <CardHeader>
+                    <Icon name="Wrench" className="h-8 w-8 text-blue-600 mb-2" />
+                    <CardTitle className="text-lg">Военная</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600 mb-3">
+                      Специализированная арматура для оборонных объектов
+                    </p>
+                    <Badge variant="secondary">Секретность</Badge>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center space-x-2">
+                    <Icon name="Wrench" className="h-6 w-6 text-blue-600" />
+                    <span>Военная арматура</span>
+                  </DialogTitle>
+                  <DialogDescription className="text-base leading-relaxed">
+                    Высокотехнологичная арматура для оборонно-промышленного комплекса
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2">Характеристики:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <li>Стойкость к экстремальным условиям</li>
+                      <li>Антикоррозийные покрытия</li>
+                      <li>Повышенная герметичность</li>
+                      <li>Работа в агрессивных средах</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Применение:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <li>Системы жизнеобеспечения</li>
+                      <li>Топливные магистрали</li>
+                      <li>Гидравлические системы</li>
+                      <li>Специальные установки</li>
+                    </ul>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Badge variant="secondary">ГОСТ Р 52720</Badge>
+                    <Badge variant="secondary">Гриф секретности</Badge>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={openModal === 'oil'} onOpenChange={(open) => open ? handleOpenModal('oil') : handleCloseModal()}>
+              <DialogTrigger asChild>
+                <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300 cursor-pointer">
+                  <CardHeader>
+                    <Icon name="Fuel" className="h-8 w-8 text-blue-600 mb-2" />
+                    <CardTitle className="text-lg">Нефтегаз</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600 mb-3">
+                      Арматура для нефтяной и газовой промышленности
+                    </p>
+                    <Badge variant="secondary">Износостойкость</Badge>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center space-x-2">
+                    <Icon name="Fuel" className="h-6 w-6 text-blue-600" />
+                    <span>Нефтегазовая арматура</span>
+                  </DialogTitle>
+                  <DialogDescription className="text-base leading-relaxed">
+                    Промышленная арматура для нефтяной и газовой отрасли
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2">Характеристики:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <li>Рабочее давление до 40 МПа</li>
+                      <li>Температурный диапазон: -60°C до +450°C</li>
+                      <li>Стойкость к нефтепродуктам</li>
+                      <li>Антикоррозийная защита</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Применение:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <li>Магистральные трубопроводы</li>
+                      <li>Нефтеперерабатывающие заводы</li>
+                      <li>Газоперекачивающие станции</li>
+                      <li>Морские платформы</li>
+                    </ul>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Badge variant="secondary">API 6D</Badge>
+                    <Badge variant="secondary">ГОСТ 9544</Badge>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={openModal === 'chemical'} onOpenChange={(open) => open ? handleOpenModal('chemical') : handleCloseModal()}>
+              <DialogTrigger asChild>
+                <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300 cursor-pointer">
+                  <CardHeader>
+                    <Icon name="Beaker" className="h-8 w-8 text-blue-600 mb-2" />
+                    <CardTitle className="text-lg">Химическая</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600 mb-3">
+                      Арматура для химических производств
+                    </p>
+                    <Badge variant="secondary">Коррозионная стойкость</Badge>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center space-x-2">
+                    <Icon name="Beaker" className="h-6 w-6 text-blue-600" />
+                    <span>Химическая арматура</span>
+                  </DialogTitle>
+                  <DialogDescription className="text-base leading-relaxed">
+                    Специализированная арматура для химической промышленности
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2">Характеристики:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <li>Стойкость к химически активным средам</li>
+                      <li>Специальные уплотнения и покрытия</li>
+                      <li>Рабочее давление до 25 МПа</li>
+                      <li>Температурный диапазон: -40°C до +400°C</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Применение:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <li>Химические заводы</li>
+                      <li>Производство удобрений</li>
+                      <li>Фармацевтическая промышленность</li>
+                      <li>Системы водоподготовки</li>
+                    </ul>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Badge variant="secondary">ГОСТ 12815</Badge>
+                    <Badge variant="secondary">DIN 3840</Badge>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
@@ -446,7 +624,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <Icon name="Settings" className="h-6 w-6 text-blue-400" />
+              <Icon name="Settings" className="h-8 w-8 text-blue-400" />
               <span className="text-xl font-bold">ПФ ОКА</span>
             </div>
             <p className="text-gray-400 text-sm">
