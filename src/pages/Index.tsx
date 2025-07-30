@@ -1057,39 +1057,24 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Logistics advantages */}
+          {/* Geography Map */}
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl">
             <h3 className="text-3xl font-bold text-white mb-8 text-center">
-              Логистические преимущества
+              Карта поставок
             </h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center group">
-                <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Icon name="Clock" className="h-8 w-8 text-blue-300" />
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">Быстрая доставка</h4>
-                <p className="text-blue-100">
-                  Собственная логистическая сеть обеспечивает доставку в кратчайшие сроки
-                </p>
-              </div>
-              <div className="text-center group">
-                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Icon name="Shield" className="h-8 w-8 text-green-300" />
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">Надежная упаковка</h4>
-                <p className="text-blue-100">
-                  Специальная промышленная упаковка гарантирует сохранность при транспортировке
-                </p>
-              </div>
-              <div className="text-center group">
-                <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Icon name="FileText" className="h-8 w-8 text-purple-300" />
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">Полная документация</h4>
-                <p className="text-blue-100">
-                  Комплект документов включает сертификаты, паспорта и инструкции
-                </p>
-              </div>
+            <div className="relative rounded-xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://cdn.poehali.dev/files/77c3c656-488d-4f5e-af76-704452e38164.png" 
+                alt="Карта поставок ПФ ОКА - атомные станции и промышленные объекты" 
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-blue-100 text-lg max-w-4xl mx-auto">
+                Наша продукция установлена на ключевых промышленных объектах России и СНГ: 
+                атомных электростанциях, нефтеперерабатывающих заводах, химических комбинатах и предприятиях энергетики
+              </p>
             </div>
           </div>
         </div>
@@ -1101,50 +1086,166 @@ const Index = () => {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Вакансии</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Присоединяйтесь к нашей команде профессионалов
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Карьера</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Мы ищем талантливых специалистов, готовых развиваться вместе с нами. 
+              Предлагаем стабильную работу, конкурентную зарплату и возможности профессионального роста.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Icon name="Briefcase" className="h-6 w-6 text-blue-600" />
-                  <span>Инженер-конструктор</span>
-                </CardTitle>
-                <CardDescription>
-                  Отдел разработки • Полная занятость
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Проектирование трубопроводной арматуры, работа с CAD-системами
-                </p>
-                <Button variant="outline" size="sm">
-                  Подробнее
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Icon name="HardHat" className="h-6 w-6 text-blue-600" />
-                  <span>Технолог производства</span>
-                </CardTitle>
-                <CardDescription>
-                  Производственный отдел • Полная занятость
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Разработка технологических процессов, контроль качества
-                </p>
-                <Button variant="outline" size="sm">
-                  Подробнее
-                </Button>
-              </CardContent>
-            </Card>
+
+          {/* Benefits */}
+          <div className="grid md:grid-cols-4 gap-6 mb-16">
+            <div className="text-center bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow group">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
+                <Icon name="TrendingUp" className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Карьерный рост</h3>
+              <p className="text-gray-600 text-sm">Четкие перспективы развития и продвижения</p>
+            </div>
+            <div className="text-center bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow group">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
+                <Icon name="DollarSign" className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Достойная оплата</h3>
+              <p className="text-gray-600 text-sm">Конкурентная зарплата и премии</p>
+            </div>
+            <div className="text-center bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow group">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
+                <Icon name="GraduationCap" className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Обучение</h3>
+              <p className="text-gray-600 text-sm">Повышение квалификации за счет компании</p>
+            </div>
+            <div className="text-center bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow group">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
+                <Icon name="Shield" className="h-8 w-8 text-orange-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Социальный пакет</h3>
+              <p className="text-gray-600 text-sm">ДМС, отпуск, льготы сотрудникам</p>
+            </div>
+          </div>
+
+          {/* Current Openings */}
+          <div className="mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">Открытые вакансии</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 border-l-4 border-l-blue-500">
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Icon name="Users" className="h-6 w-6 text-blue-600" />
+                    <span>Менеджер по продажам</span>
+                  </CardTitle>
+                  <CardDescription>
+                    Отдел продаж • Полная занятость • Опыт от 2 лет
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Поиск новых клиентов, ведение переговоров, увеличение объема продаж
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-green-600 font-semibold">80-120 тыс. руб.</span>
+                    <Button variant="outline" size="sm">
+                      Откликнуться
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 border-l-4 border-l-green-500">
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Icon name="Calculator" className="h-6 w-6 text-green-600" />
+                    <span>Главный бухгалтер</span>
+                  </CardTitle>
+                  <CardDescription>
+                    Финансовый отдел • Полная занятость • Опыт от 5 лет
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Ведение учета, подготовка отчетности, налоговое планирование
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-green-600 font-semibold">100-140 тыс. руб.</span>
+                    <Button variant="outline" size="sm">
+                      Откликнуться
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 border-l-4 border-l-purple-500">
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Icon name="Monitor" className="h-6 w-6 text-purple-600" />
+                    <span>IT-специалист</span>
+                  </CardTitle>
+                  <CardDescription>
+                    IT-отдел • Полная занятость • Опыт от 3 лет
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Поддержка IT-инфраструктуры, администрирование систем
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-green-600 font-semibold">90-130 тыс. руб.</span>
+                    <Button variant="outline" size="sm">
+                      Откликнуться
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 border-l-4 border-l-orange-500">
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Icon name="Truck" className="h-6 w-6 text-orange-600" />
+                    <span>Логист</span>
+                  </CardTitle>
+                  <CardDescription>
+                    Логистический отдел • Полная занятость • Опыт от 1 года
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Организация поставок, контроль доставки, работа с транспортными компаниями
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-green-600 font-semibold">60-90 тыс. руб.</span>
+                    <Button variant="outline" size="sm">
+                      Откликнуться
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Contact for applications */}
+          <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
+            <Icon name="Mail" className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Не нашли подходящую вакансию?</h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Присылайте свое резюме на указанную почту. Мы рассмотрим ваши навыки и свяжемся, 
+              если появится подходящая позиция.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="mailto:hr@company.ru" 
+                className="text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+              >
+                hr@company.ru
+              </a>
+              <span className="text-gray-400">•</span>
+              <a 
+                href="tel:+74951234567" 
+                className="text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+              >
+                +7 (495) 123-45-67
+              </a>
+            </div>
           </div>
         </div>
       </section>
