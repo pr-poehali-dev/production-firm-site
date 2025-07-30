@@ -34,12 +34,6 @@ const Index = () => {
             </div>
             <nav className="hidden md:flex space-x-8">
               <a
-                href="#about"
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-              >
-                О компании
-              </a>
-              <a
                 href="#news"
                 className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
@@ -52,6 +46,12 @@ const Index = () => {
                 Продукция
               </a>
               <a
+                href="#production"
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+              >
+                Производство
+              </a>
+              <a
                 href="#quality"
                 className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
@@ -62,6 +62,12 @@ const Index = () => {
                 className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Услуги
+              </a>
+              <a
+                href="#geography"
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+              >
+                География
               </a>
               <a
                 href="#contacts"
@@ -118,51 +124,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white"></div>
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              О компании
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Лидер в области производства специализированной трубопроводной
-              арматуры
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
-              <CardHeader>
-                <Icon name="Award" className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle>Опыт работы</CardTitle>
-                <CardDescription>
-                  Более 20 лет на рынке промышленного оборудования
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
-              <CardHeader>
-                <Icon name="Shield" className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle>Сертификация</CardTitle>
-                <CardDescription>
-                  Полное соответствие ГОСТ и международным стандартам
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
-              <CardHeader>
-                <Icon name="Users" className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle>Команда</CardTitle>
-                <CardDescription>
-                  Высококвалифицированные специалисты и инженеры
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
+
 
       {/* News Section with Company Description */}
       <section id="news" className="py-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
@@ -617,7 +579,210 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Production Section */}
+      <section id="production" className="py-20 bg-gradient-to-br from-gray-50 to-slate-100 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 bg-grid-pattern bg-grid-gray-900"></div>
+        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500 shadow-lg"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-gray-900 mb-6 drop-shadow-sm">
+              Производство
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Современное высокотехнологичное производство с полным циклом изготовления промышленной арматуры
+            </p>
+          </div>
 
+          {/* Main production facility showcase */}
+          <div className="mb-16">
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+              <div className="relative h-96">
+                <img 
+                  src="/img/e53d8208-db8c-4d3e-96ba-310ead3a0f00.jpg" 
+                  alt="Производственный цех с современным оборудованием" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute bottom-8 left-8 right-8">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      Высокотехнологичное производство
+                    </h3>
+                    <p className="text-gray-700">
+                      Современные производственные линии с ЧПУ оборудованием и автоматизированными системами контроля качества
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Production capabilities grid */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            {/* Manufacturing Equipment */}
+            <div className="space-y-8">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-64">
+                  <img 
+                    src="/img/f162b2a9-a1a4-4e96-a1a0-407bb97096c1.jpg" 
+                    alt="Промышленное оборудование и станки" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <Badge className="mb-2 bg-blue-600 text-white">Оборудование</Badge>
+                    <h4 className="text-xl font-bold text-white drop-shadow">
+                      Станочный парк и механообработка
+                    </h4>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <h5 className="font-semibold mb-2 text-gray-900">Оборудование:</h5>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Токарные станки с ЧПУ</li>
+                        <li>• Фрезерные центры</li>
+                        <li>• Шлифовальные станки</li>
+                        <li>• Координатно-расточные</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold mb-2 text-gray-900">Возможности:</h5>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Точность до 0.01 мм</li>
+                        <li>• Детали до 5000 мм</li>
+                        <li>• Серийное производство</li>
+                        <li>• Единичные изделия</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Finished Products */}
+            <div className="space-y-8">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-64">
+                  <img 
+                    src="/img/bb2853d6-4857-4186-96c8-a5c15791a915.jpg" 
+                    alt="Готовая продукция - промышленная арматура" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <Badge className="mb-2 bg-green-600 text-white">Продукция</Badge>
+                    <h4 className="text-xl font-bold text-white drop-shadow">
+                      Готовая промышленная арматура
+                    </h4>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <h5 className="font-semibold mb-2 text-gray-900">Номенклатура:</h5>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Задвижки клиновые</li>
+                        <li>• Вентили запорные</li>
+                        <li>• Краны шаровые</li>
+                        <li>• Обратные клапаны</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold mb-2 text-gray-900">Материалы:</h5>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Углеродистая сталь</li>
+                        <li>• Нержавеющая сталь</li>
+                        <li>• Легированные стали</li>
+                        <li>• Специальные сплавы</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Production process steps */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              Производственный процесс
+            </h3>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                  <Icon name="FileText" className="h-8 w-8 text-white" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Проектирование</h4>
+                <p className="text-sm text-gray-600">
+                  Разработка технической документации и 3D-моделирование
+                </p>
+              </div>
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                  <Icon name="Cog" className="h-8 w-8 text-white" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Изготовление</h4>
+                <p className="text-sm text-gray-600">
+                  Механическая обработка на станках с ЧПУ и специальном оборудовании
+                </p>
+              </div>
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                  <Icon name="Search" className="h-8 w-8 text-white" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Контроль</h4>
+                <p className="text-sm text-gray-600">
+                  Многоступенчатый контроль качества и испытания готовой продукции
+                </p>
+              </div>
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                  <Icon name="Package" className="h-8 w-8 text-white" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Упаковка</h4>
+                <p className="text-sm text-gray-600">
+                  Специальная упаковка и подготовка к отгрузке с сопроводительной документацией
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Production statistics */}
+          <div className="mt-16 grid md:grid-cols-4 gap-8">
+            <div className="text-center bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Calendar" className="h-6 w-6 text-blue-600" />
+              </div>
+              <h4 className="text-3xl font-bold text-gray-900 mb-2">20+</h4>
+              <p className="text-gray-600">лет производственного опыта</p>
+            </div>
+            <div className="text-center bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Settings" className="h-6 w-6 text-green-600" />
+              </div>
+              <h4 className="text-3xl font-bold text-gray-900 mb-2">50+</h4>
+              <p className="text-gray-600">единиц современного оборудования</p>
+            </div>
+            <div className="text-center bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Users" className="h-6 w-6 text-purple-600" />
+              </div>
+              <h4 className="text-3xl font-bold text-gray-900 mb-2">150+</h4>
+              <p className="text-gray-600">квалифицированных специалистов</p>
+            </div>
+            <div className="text-center bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Award" className="h-6 w-6 text-orange-600" />
+              </div>
+              <h4 className="text-3xl font-bold text-gray-900 mb-2">5000+</h4>
+              <p className="text-gray-600">изделий в год</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Quality Section */}
       <section id="quality" className="py-20 relative overflow-hidden">
@@ -722,6 +887,210 @@ const Index = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Geography Section */}
+      <section id="geography" className="py-20 bg-gradient-to-br from-blue-900 via-slate-800 to-indigo-900 relative overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        {/* Decorative lines */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-indigo-400 to-transparent"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-lg">
+              География поставок
+            </h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              Наша продукция работает на промышленных объектах по всей России и странах СНГ
+            </p>
+          </div>
+
+          {/* Main stats */}
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Icon name="Globe" className="h-8 w-8 text-blue-300" />
+              </div>
+              <h3 className="text-4xl font-bold text-white mb-2">85+</h3>
+              <p className="text-blue-200">регионов России</p>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Icon name="MapPin" className="h-8 w-8 text-green-300" />
+              </div>
+              <h3 className="text-4xl font-bold text-white mb-2">12</h3>
+              <p className="text-blue-200">стран СНГ</p>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Icon name="Building2" className="h-8 w-8 text-purple-300" />
+              </div>
+              <h3 className="text-4xl font-bold text-white mb-2">500+</h3>
+              <p className="text-blue-200">промышленных объектов</p>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Icon name="Truck" className="h-8 w-8 text-orange-300" />
+              </div>
+              <h3 className="text-4xl font-bold text-white mb-2">24/7</h3>
+              <p className="text-blue-200">логистическая поддержка</p>
+            </div>
+          </div>
+
+          {/* Key regions */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            {/* Russia regions */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                  <Icon name="Flag" className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Российская Федерация</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-blue-300 mb-3">Ключевые регионы:</h4>
+                  <ul className="space-y-2 text-white/90">
+                    <li className="flex items-center">
+                      <Icon name="MapPin" className="h-4 w-4 text-blue-400 mr-2" />
+                      Центральный ФО
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MapPin" className="h-4 w-4 text-blue-400 mr-2" />
+                      Приволжский ФО
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MapPin" className="h-4 w-4 text-blue-400 mr-2" />
+                      Уральский ФО
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MapPin" className="h-4 w-4 text-blue-400 mr-2" />
+                      Сибирский ФО
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-blue-300 mb-3">Отрасли:</h4>
+                  <ul className="space-y-2 text-white/90">
+                    <li className="flex items-center">
+                      <Icon name="Zap" className="h-4 w-4 text-green-400 mr-2" />
+                      Атомная энергетика
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Fuel" className="h-4 w-4 text-orange-400 mr-2" />
+                      Нефтегазовый комплекс
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Beaker" className="h-4 w-4 text-purple-400 mr-2" />
+                      Химическая промышленность
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Droplets" className="h-4 w-4 text-blue-400 mr-2" />
+                      Водоснабжение
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* CIS countries */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+                  <Icon name="Globe2" className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Страны СНГ</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-green-300 mb-3">Экспортные направления:</h4>
+                  <ul className="space-y-2 text-white/90">
+                    <li className="flex items-center">
+                      <Icon name="MapPin" className="h-4 w-4 text-green-400 mr-2" />
+                      Беларусь
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MapPin" className="h-4 w-4 text-green-400 mr-2" />
+                      Казахстан
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MapPin" className="h-4 w-4 text-green-400 mr-2" />
+                      Узбекистан
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="MapPin" className="h-4 w-4 text-green-400 mr-2" />
+                      Азербайджан
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-green-300 mb-3">Проекты:</h4>
+                  <ul className="space-y-2 text-white/90">
+                    <li className="flex items-center">
+                      <Icon name="Building" className="h-4 w-4 text-yellow-400 mr-2" />
+                      Нефтепереработка
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Zap" className="h-4 w-4 text-blue-400 mr-2" />
+                      Энергетика
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Droplets" className="h-4 w-4 text-cyan-400 mr-2" />
+                      Водные ресурсы
+                    </li>
+                    <li className="flex items-center">
+                      <Icon name="Factory" className="h-4 w-4 text-gray-400 mr-2" />
+                      Промышленность
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Logistics advantages */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl">
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">
+              Логистические преимущества
+            </h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center group">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name="Clock" className="h-8 w-8 text-blue-300" />
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Быстрая доставка</h4>
+                <p className="text-blue-100">
+                  Собственная логистическая сеть обеспечивает доставку в кратчайшие сроки
+                </p>
+              </div>
+              <div className="text-center group">
+                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name="Shield" className="h-8 w-8 text-green-300" />
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Надежная упаковка</h4>
+                <p className="text-blue-100">
+                  Специальная промышленная упаковка гарантирует сохранность при транспортировке
+                </p>
+              </div>
+              <div className="text-center group">
+                <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name="FileText" className="h-8 w-8 text-purple-300" />
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Полная документация</h4>
+                <p className="text-blue-100">
+                  Комплект документов включает сертификаты, паспорта и инструкции
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
