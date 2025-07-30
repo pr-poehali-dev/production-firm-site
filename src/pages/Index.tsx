@@ -127,14 +127,13 @@ const Index = () => {
 
 
       {/* News Section with Company Description */}
-      <section id="news" className="py-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        {/* Industrial background texture */}
-        <div className="absolute inset-0 opacity-10 bg-gradient-to-r from-blue-900/20 to-gray-900/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/50 to-transparent"></div>
-        
-        {/* Metallic accent lines */}
-        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 shadow-lg"></div>
-        <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 shadow-lg"></div>
+      <section id="news" className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl"></div>
+        </div>
         
         <div className="container mx-auto px-4 relative z-10">
           {/* Company Industrial Description */}
