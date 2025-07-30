@@ -705,6 +705,77 @@ const Index = () => {
             </div>
           </div>
 
+          {/* Key Areas Gallery */}
+          <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 border border-blue-100">
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              Ключевые направления ПФ ОКА
+            </h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Nuclear Power Plants */}
+              <div className="group">
+                <div className="relative overflow-hidden rounded-xl shadow-lg">
+                  <img 
+                    src="/img/749f01e5-245f-45b3-a1a3-d7dbd2f922f9.jpg" 
+                    alt="Атомные электростанции - основной заказчик ПФ ОКА" 
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <Badge className="mb-2 bg-blue-600 text-white">АЭС</Badge>
+                    <h4 className="text-lg font-bold text-white drop-shadow">
+                      Атомная энергетика
+                    </h4>
+                    <p className="text-sm text-blue-100 mt-1">
+                      Поставки арматуры для АЭС по всей России
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Manufacturing Equipment */}
+              <div className="group">
+                <div className="relative overflow-hidden rounded-xl shadow-lg">
+                  <img 
+                    src="/img/2f9e8d33-f240-4733-af02-d96db9a62cf4.jpg" 
+                    alt="Производственные станки с ЧПУ на заводе ПФ ОКА" 
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <Badge className="mb-2 bg-green-600 text-white">Производство</Badge>
+                    <h4 className="text-lg font-bold text-white drop-shadow">
+                      Современные станки
+                    </h4>
+                    <p className="text-sm text-green-100 mt-1">
+                      Высокоточное оборудование с ЧПУ
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Industrial Products */}
+              <div className="group">
+                <div className="relative overflow-hidden rounded-xl shadow-lg">
+                  <img 
+                    src="/img/f07c2f11-363d-4590-9dfb-97e33ab371d0.jpg" 
+                    alt="Промышленная арматура и трубопроводная продукция ПФ ОКА" 
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <Badge className="mb-2 bg-purple-600 text-white">Продукция</Badge>
+                    <h4 className="text-lg font-bold text-white drop-shadow">
+                      Промышленная арматура
+                    </h4>
+                    <p className="text-sm text-purple-100 mt-1">
+                      Высококачественные изделия для промышленности
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Production process steps */}
           <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
             <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
