@@ -29,7 +29,11 @@ const Index = () => {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <Icon name="Settings" className="h-14 w-14 text-blue-600" />
+              <img 
+                src="https://cdn.poehali.dev/files/a3990dbc-3b26-4517-9596-4282f0bdf140.png" 
+                alt="ПФ ОКА логотип" 
+                className="h-14 w-14 object-contain"
+              />
               <h1 className="text-3xl font-bold text-gray-900">ПФ ОКА</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
@@ -105,21 +109,72 @@ const Index = () => {
             атомных станций, военной промышленности, нефтяной, газовой и
             химической отраслей
           </p>
-          <div className="flex justify-center space-x-6">
-            <Button
-              size="lg"
-              variant="secondary"
-              className="transform hover:scale-105 transition-all duration-300 shadow-lg"
-            >
-              Каталог продукции
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
-            >
-              Получить консультацию
-            </Button>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Nuclear Power Plants */}
+            <div className="group">
+              <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                <img 
+                  src="/img/749f01e5-245f-45b3-a1a3-d7dbd2f922f9.jpg" 
+                  alt="Атомные электростанции - основной заказчик ПФ ОКА" 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/50"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <Badge className="mb-3 bg-blue-600 text-white">АЭС</Badge>
+                  <h4 className="text-2xl font-bold text-white drop-shadow mb-2">
+                    Атомная энергетика
+                  </h4>
+                  <p className="text-blue-100 text-sm">
+                    Поставки критически важной арматуры для АЭС по всей России и странам СНГ
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Manufacturing Equipment */}
+            <div className="group">
+              <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                <img 
+                  src="/img/2f9e8d33-f240-4733-af02-d96db9a62cf4.jpg" 
+                  alt="Производственные станки с ЧПУ на заводе ПФ ОКА" 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/50"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <Badge className="mb-3 bg-green-600 text-white">Производство</Badge>
+                  <h4 className="text-2xl font-bold text-white drop-shadow mb-2">
+                    Современные технологии
+                  </h4>
+                  <p className="text-green-100 text-sm">
+                    Высокоточное оборудование с ЧПУ и передовые производственные процессы
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Industrial Products */}
+            <div className="group">
+              <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                <img 
+                  src="/img/f07c2f11-363d-4590-9dfb-97e33ab371d0.jpg" 
+                  alt="Промышленная арматура и трубопроводная продукция ПФ ОКА" 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/50"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <Badge className="mb-3 bg-purple-600 text-white">Продукция</Badge>
+                  <h4 className="text-2xl font-bold text-white drop-shadow mb-2">
+                    Промышленная арматура
+                  </h4>
+                  <p className="text-purple-100 text-sm">
+                    Широкий спектр высококачественных изделий для критически важных систем
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -202,7 +257,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-lg">
-              Ключевые направления ПФ ОКА
+              Ключевые направления
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Специализируемся на производстве высококачественной промышленной арматуры для стратегически важных отраслей
@@ -218,6 +273,7 @@ const Index = () => {
                   alt="Атомные электростанции - основной заказчик ПФ ОКА" 
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <Badge className="mb-3 bg-blue-600 text-white">АЭС</Badge>
@@ -239,6 +295,7 @@ const Index = () => {
                   alt="Производственные станки с ЧПУ на заводе ПФ ОКА" 
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <Badge className="mb-3 bg-green-600 text-white">Производство</Badge>
@@ -260,6 +317,7 @@ const Index = () => {
                   alt="Промышленная арматура и трубопроводная продукция ПФ ОКА" 
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <Badge className="mb-3 bg-purple-600 text-white">Продукция</Badge>
@@ -1291,7 +1349,11 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <Icon name="Settings" className="h-8 w-8 text-blue-400" />
+              <img 
+                src="https://cdn.poehali.dev/files/a3990dbc-3b26-4517-9596-4282f0bdf140.png" 
+                alt="ПФ ОКА логотип" 
+                className="h-8 w-8 object-contain"
+              />
               <span className="text-xl font-bold">ПФ ОКА</span>
             </div>
             <p className="text-gray-400 text-sm">
