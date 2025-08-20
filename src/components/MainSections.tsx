@@ -523,12 +523,12 @@ const MainSections = () => {
             </Card>
             <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300 bg-white/10 backdrop-blur-sm border border-white/20 text-white">
               <CardHeader>
-                <Icon name="Truck" className="h-12 w-12 text-blue-400 mb-4" />
-                <CardTitle className="text-white">Поставка</CardTitle>
+                <Icon name="TestTube" className="h-12 w-12 text-blue-400 mb-4" />
+                <CardTitle className="text-white">Испытания</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-blue-100">
-                  Организация логистики и своевременная поставка продукции
+                  Комплексные испытания металлов и материалов на прочность, коррозийную стойкость и износостойкость
                 </p>
               </CardContent>
             </Card>
