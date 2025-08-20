@@ -15,7 +15,7 @@ const Header = () => {
               alt="ПФ ОКА логотип" 
               className="h-14 w-14 object-contain"
             />
-            <h1 className="text-3xl font-bold text-gray-900">ПФ ОКА</h1>
+            <h1 className="text-3xl font-bold text-white">ПФ ОКА</h1>
           </div>
           <nav className="hidden md:flex space-x-8">
             <a
