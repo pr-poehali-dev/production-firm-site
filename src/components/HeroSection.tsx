@@ -31,7 +31,7 @@ const HeroSection = () => {
               <img 
                 src="/img/749f01e5-245f-45b3-a1a3-d7dbd2f922f9.jpg" 
                 alt="Атомные электростанции - основной заказчик ПФ ОКА" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-700 ease-out animate-pulse"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-700 ease-out animate-slideInLeft"
               />
               <div className="absolute inset-0 bg-black/50"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -53,7 +53,7 @@ const HeroSection = () => {
               <img 
                 src="/img/2f9e8d33-f240-4733-af02-d96db9a62cf4.jpg" 
                 alt="Производственные станки с ЧПУ на заводе ПФ ОКА" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-700 ease-out animate-pulse"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-700 ease-out animate-slideInLeft"
               />
               <div className="absolute inset-0 bg-black/50"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -75,7 +75,7 @@ const HeroSection = () => {
               <img 
                 src="/img/f07c2f11-363d-4590-9dfb-97e33ab371d0.jpg" 
                 alt="Промышленная арматура и трубопроводная продукция ПФ ОКА" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-700 ease-out animate-pulse"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-700 ease-out animate-slideInLeft"
               />
               <div className="absolute inset-0 bg-black/50"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
