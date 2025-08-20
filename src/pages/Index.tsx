@@ -13,19 +13,12 @@ import Icon from "@/components/ui/icon";
 const Index = () => {
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-blue-50/20 to-gray-50/20 backdrop-blur-sm"
-          style={{
-            backgroundImage:
-              "url(/img/c1622a71-113f-46a5-93d0-958617b847a9.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.15,
-          }}
-        ></div>
+      <header className="bg-white/5 backdrop-blur-sm shadow-sm border-b border-white/10 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
+        </div>
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -39,43 +32,43 @@ const Index = () => {
             <nav className="hidden md:flex space-x-8">
               <a
                 href="#news"
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Новости
               </a>
               <a
                 href="#products"
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Продукция
               </a>
               <a
                 href="#production"
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Производство
               </a>
               <a
                 href="#quality"
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Качество
               </a>
               <a
                 href="#services"
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Услуги
               </a>
               <a
                 href="#geography"
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 География
               </a>
               <a
                 href="#contacts"
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Контакты
               </a>
@@ -116,7 +109,7 @@ const Index = () => {
                 <img 
                   src="/img/749f01e5-245f-45b3-a1a3-d7dbd2f922f9.jpg" 
                   alt="Атомные электростанции - основной заказчик ПФ ОКА" 
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-700 ease-out animate-pulse"
                 />
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -138,7 +131,7 @@ const Index = () => {
                 <img 
                   src="/img/2f9e8d33-f240-4733-af02-d96db9a62cf4.jpg" 
                   alt="Производственные станки с ЧПУ на заводе ПФ ОКА" 
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-700 ease-out animate-pulse"
                 />
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -160,7 +153,7 @@ const Index = () => {
                 <img 
                   src="/img/f07c2f11-363d-4590-9dfb-97e33ab371d0.jpg" 
                   alt="Промышленная арматура и трубопроводная продукция ПФ ОКА" 
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-700 ease-out animate-pulse"
                 />
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -181,69 +174,7 @@ const Index = () => {
 
 
 
-      {/* News Section with Company Description */}
-      <section id="news" className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
-        {/* Background effects */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
-          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Company Industrial Description */}
-          <div className="text-center mb-20">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-12 border border-white/10 shadow-2xl">
-              <div className="flex items-center justify-center mb-8">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
-                    <Icon name="Factory" className="h-8 w-8 text-white" />
-                  </div>
-                  <div className="text-left">
-                    <h2 className="text-4xl font-bold text-white mb-2 drop-shadow-lg">
-                      ПФ ОКА
-                    </h2>
-                    <p className="text-blue-300 text-lg font-medium">
-                      Промышленное предприятие
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="Calendar" className="h-8 w-8 text-blue-400" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">20+</h3>
-                  <p className="text-blue-200">лет опыта в промышленности</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="Users" className="h-8 w-8 text-blue-400" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">500+</h3>
-                  <p className="text-blue-200">квалифицированных специалистов</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="Building" className="h-8 w-8 text-blue-400" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">1000+</h3>
-                  <p className="text-blue-200">реализованных проектов</p>
-                </div>
-              </div>
-              
-              <p className="text-xl text-blue-100 leading-relaxed max-w-4xl mx-auto">
-                Ведущий российский производитель специализированной трубопроводной арматуры 
-                для атомной энергетики, оборонной промышленности, нефтегазового и химического 
-                комплексов. Наше предприятие оснащено современным высокотехнологичным 
-                оборудованием и сертифицировано по международным стандартам качества.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
 
       {/* News Section */}
