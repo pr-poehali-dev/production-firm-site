@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import { Link } from "react-router-dom";
 
 const NewsSection = () => {
   return (
@@ -186,10 +187,12 @@ const NewsSection = () => {
 
         {/* View all news button */}
         <div className="text-center mt-12">
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg">
-            <Icon name="Newspaper" className="h-5 w-5 mr-2" />
-            Все новости
-          </Button>
+          <Link to="/news">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg">
+              <Icon name="Newspaper" className="h-5 w-5 mr-2" />
+              Все новости
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
