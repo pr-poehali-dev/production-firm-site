@@ -680,7 +680,7 @@ const MainSections = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-green-400 font-semibold">80-120 тыс. руб.</span>
-                    <Button variant="outline" size="sm" className="text-white border-white/30 hover:bg-white/10">
+                    <Button variant="outline" size="sm" className="text-white border-white/30 hover:bg-white/10 bg-transparent">
                       Откликнуться
                     </Button>
                   </div>
@@ -703,7 +703,7 @@ const MainSections = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-green-400 font-semibold">100-140 тыс. руб.</span>
-                    <Button variant="outline" size="sm" className="text-white border-white/30 hover:bg-white/10">
+                    <Button variant="outline" size="sm" className="text-white border-white/30 hover:bg-white/10 bg-transparent">
                       Откликнуться
                     </Button>
                   </div>
@@ -726,7 +726,7 @@ const MainSections = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-green-400 font-semibold">90-130 тыс. руб.</span>
-                    <Button variant="outline" size="sm" className="text-white border-white/30 hover:bg-white/10">
+                    <Button variant="outline" size="sm" className="text-white border-white/30 hover:bg-white/10 bg-transparent">
                       Откликнуться
                     </Button>
                   </div>
@@ -749,7 +749,7 @@ const MainSections = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-green-400 font-semibold">60-90 тыс. руб.</span>
-                    <Button variant="outline" size="sm" className="text-white border-white/30 hover:bg-white/10">
+                    <Button variant="outline" size="sm" className="text-white border-white/30 hover:bg-white/10 bg-transparent">
                       Откликнуться
                     </Button>
                   </div>
