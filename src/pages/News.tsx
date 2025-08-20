@@ -125,6 +125,12 @@ const News = () => {
                 Главная
               </Link>
               <a
+                href="/#news"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+              >
+                Новости
+              </a>
+              <a
                 href="/#products"
                 className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
@@ -135,6 +141,24 @@ const News = () => {
                 className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
               >
                 Производство
+              </a>
+              <a
+                href="/#quality"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+              >
+                Качество
+              </a>
+              <a
+                href="/#services"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+              >
+                Услуги
+              </a>
+              <a
+                href="/#geography"
+                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+              >
+                География
               </a>
               <a
                 href="/#contacts"
