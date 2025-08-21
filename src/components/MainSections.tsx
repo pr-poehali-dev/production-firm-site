@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -9,6 +9,109 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+
+// Laboratory Gallery Component
+const LabGallery = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+  
+  const images = [
+    {
+      src: "/img/88832759-7cda-4b4b-b5f0-91a86550c258.jpg",
+      title: "Современная лаборатория",
+      description: "Основное лабораторное оборудование"
+    },
+    {
+      src: "/img/047e9a6f-cb03-4b50-8a9a-4d822c7842f7.jpg",
+      title: "Испытательное оборудование",
+      description: "Высокоточные измерительные приборы"
+    },
+    {
+      src: "/img/729b24f3-aeb0-4470-bf78-c14fc3beced5.jpg",
+      title: "Химический анализ",
+      description: "Аналитическое оборудование"
+    }
+  ];
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-white/20">
+      <div className="relative h-96 overflow-hidden">
+        <img 
+          src={images[currentImage].src}
+          alt={images[currentImage].title}
+          className="w-full h-full object-cover transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-black/20"></div>
+        
+        {/* Navigation buttons */}
+        <button 
+          onClick={prevImage}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full p-3 transition-all duration-300 group"
+        >
+          <Icon name="ChevronLeft" className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
+        </button>
+        <button 
+          onClick={nextImage}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full p-3 transition-all duration-300 group"
+        >
+          <Icon name="ChevronRight" className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
+        </button>
+        
+        {/* Image indicators */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImage(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImage 
+                  ? 'bg-white scale-125' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+      
+      {/* Image info */}
+      <div className="p-8">
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-white mb-2">
+            {images[currentImage].title}
+          </h3>
+          <p className="text-blue-200 text-lg">
+            {images[currentImage].description}
+          </p>
+        </div>
+        
+        {/* Image titles list */}
+        <div className="mt-8 grid md:grid-cols-3 gap-4">
+          {images.map((image, index) => (
+            <div 
+              key={index}
+              className={`text-center p-4 rounded-lg transition-all duration-300 cursor-pointer ${
+                index === currentImage 
+                  ? 'bg-blue-500/20 border border-blue-400/30' 
+                  : 'bg-white/5 hover:bg-white/10'
+              }`}
+              onClick={() => setCurrentImage(index)}
+            >
+              <h4 className="text-white font-semibold mb-1">{image.title}</h4>
+              <p className="text-blue-300 text-sm">{image.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const MainSections = () => {
   return (
@@ -427,6 +530,56 @@ const MainSections = () => {
         </div>
       </section>
 
+      {/* Laboratory Section */}
+      <section id="laboratory" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-sm">
+              Лаборатория
+            </h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              Современная научно-исследовательская лаборатория с высокоточным оборудованием для комплексных испытаний
+            </p>
+          </div>
+
+          <LabGallery />
+
+          {/* Laboratory capabilities */}
+          <div className="mt-16 grid md:grid-cols-3 gap-8">
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/20">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <Icon name="Microscope" className="h-8 w-8 text-blue-300" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Микроскопия</h3>
+              <p className="text-blue-200 leading-relaxed">
+                Металлографические и электронные микроскопы для анализа структуры материалов
+              </p>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/20">
+              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <Icon name="Activity" className="h-8 w-8 text-green-300" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Механические испытания</h3>
+              <p className="text-blue-200 leading-relaxed">
+                Испытания на растяжение, сжатие, изгиб, ударную вязкость и твердость
+              </p>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/20">
+              <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <Icon name="Beaker" className="h-8 w-8 text-purple-300" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Химический анализ</h3>
+              <p className="text-blue-200 leading-relaxed">
+                Спектральный анализ, хроматография, определение химического состава
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quality Section */}
       <section id="quality" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
@@ -523,7 +676,7 @@ const MainSections = () => {
             </Card>
             <Card className="hover:shadow-lg transition-shadow transform hover:scale-105 duration-300 bg-white/10 backdrop-blur-sm border border-white/20 text-white">
               <CardHeader>
-                <Icon name="TestTube" className="h-12 w-12 text-blue-400 mb-4" />
+                <Icon name="Beaker" className="h-12 w-12 text-blue-400 mb-4" />
                 <CardTitle className="text-white">Испытания</CardTitle>
               </CardHeader>
               <CardContent>
