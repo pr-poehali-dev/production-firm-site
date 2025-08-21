@@ -18,7 +18,7 @@ const LabGallery = () => {
   
   const images = [
     {
-      src: "/img/88832759-7cda-4b4b-b5f0-91a86550c258.jpg",
+      src: "https://cdn.poehali.dev/files/f420695e-53f5-4af4-969f-868a504c3837.JPG",
       title: "Неразрушающий контроль",
       description: "Методы контроля без повреждения изделий",
       equipment: [
@@ -29,7 +29,7 @@ const LabGallery = () => {
       ]
     },
     {
-      src: "/img/047e9a6f-cb03-4b50-8a9a-4d822c7842f7.jpg",
+      src: "https://cdn.poehali.dev/files/af8d1976-eaaf-4b6a-92fc-bcb7a38c9746.JPG",
       title: "Разрушающий контроль",
       description: "Механические испытания материалов",
       equipment: [
@@ -40,7 +40,7 @@ const LabGallery = () => {
       ]
     },
     {
-      src: "/img/729b24f3-aeb0-4470-bf78-c14fc3beced5.jpg",
+      src: "https://cdn.poehali.dev/files/e0d4a538-7ba8-4f9c-a0a0-f58f156c4595.JPG",
       title: "Прайс",
       description: "Стоимость услуг лаборатории",
       equipment: [
