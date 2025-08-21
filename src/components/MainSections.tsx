@@ -578,7 +578,7 @@ const MainSections = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-sm">
-              Лаборатория
+              Центральная заводская лаборатория
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Современная научно-исследовательская лаборатория с высокоточным оборудованием для комплексных испытаний
