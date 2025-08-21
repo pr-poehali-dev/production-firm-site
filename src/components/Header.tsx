@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
 
 const Header = () => {
   return (
@@ -37,6 +37,12 @@ const Header = () => {
               Производство
             </a>
             <a
+              href="#laboratory"
+              className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
+            >
+              Лаборатория
+            </a>
+            <a
               href="#quality"
               className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
             >
@@ -61,9 +67,24 @@ const Header = () => {
               Контакты
             </a>
           </nav>
-          <Button className="transform hover:scale-105 transition-transform duration-300">
-            Связаться
-          </Button>
+          <div className="flex items-center space-x-4">
+            <a 
+              href="https://vk.com/pfoka" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-300 transition-all duration-300 transform hover:scale-110 p-2 hover:bg-white/10 rounded-full"
+            >
+              <Icon name="Github" className="h-6 w-6" />
+            </a>
+            <a 
+              href="https://t.me/pfoka" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-300 transition-all duration-300 transform hover:scale-110 p-2 hover:bg-white/10 rounded-full"
+            >
+              <Icon name="Send" className="h-6 w-6" />
+            </a>
+          </div>
         </div>
       </div>
     </header>

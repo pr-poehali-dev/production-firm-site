@@ -14,21 +14,41 @@ import Icon from "@/components/ui/icon";
 const LabGallery = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
+  const [isHovered, setIsHovered] = useState(false);
+  
   const images = [
     {
       src: "/img/88832759-7cda-4b4b-b5f0-91a86550c258.jpg",
       title: "Современная лаборатория",
-      description: "Основное лабораторное оборудование"
+      description: "Основное лабораторное оборудование",
+      equipment: [
+        "Металлографические микроскопы",
+        "Электронные микроскопы",
+        "Компьютерные станции",
+        "Лабораторная посуда"
+      ]
     },
     {
       src: "/img/047e9a6f-cb03-4b50-8a9a-4d822c7842f7.jpg",
       title: "Испытательное оборудование",
-      description: "Высокоточные измерительные приборы"
+      description: "Высокоточные измерительные приборы",
+      equipment: [
+        "Спектрометры",
+        "Машины для испытания на твёрдость",
+        "Измерительные приборы",
+        "Подготовка образцов"
+      ]
     },
     {
       src: "/img/729b24f3-aeb0-4470-bf78-c14fc3beced5.jpg",
       title: "Химический анализ",
-      description: "Аналитическое оборудование"
+      description: "Аналитическое оборудование",
+      equipment: [
+        "Хроматография",
+        "Аналитические весы",
+        "Пробирки с растворами",
+        "Безопасность оборудования"
+      ]
     }
   ];
 
@@ -91,20 +111,36 @@ const LabGallery = () => {
           </p>
         </div>
         
-        {/* Image titles list */}
+        {/* Image titles list with dropdown */}
         <div className="mt-8 grid md:grid-cols-3 gap-4">
           {images.map((image, index) => (
             <div 
               key={index}
-              className={`text-center p-4 rounded-lg transition-all duration-300 cursor-pointer ${
+              className={`relative text-center p-4 rounded-lg transition-all duration-300 cursor-pointer ${
                 index === currentImage 
                   ? 'bg-blue-500/20 border border-blue-400/30' 
                   : 'bg-white/5 hover:bg-white/10'
               }`}
               onClick={() => setCurrentImage(index)}
+              onMouseEnter={() => index === 0 && setIsHovered(true)}
+              onMouseLeave={() => index === 0 && setIsHovered(false)}
             >
               <h4 className="text-white font-semibold mb-1">{image.title}</h4>
               <p className="text-blue-300 text-sm">{image.description}</p>
+              
+              {/* Dropdown for first item only */}
+              {index === 0 && isHovered && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white/15 backdrop-blur-sm rounded-lg p-4 border border-white/20 z-10 shadow-xl">
+                  <div className="text-left">
+                    {image.equipment?.map((item, idx) => (
+                      <div key={idx} className="text-blue-200 text-sm mb-1 flex items-center">
+                        <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -547,34 +583,76 @@ const MainSections = () => {
 
           <LabGallery />
 
-          {/* Laboratory capabilities */}
-          <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/20">
-              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Icon name="Microscope" className="h-8 w-8 text-blue-300" />
+          {/* Laboratory capabilities - simple list */}
+          <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl">
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">
+              Возможности лаборатории
+            </h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
+                  <Icon name="Microscope" className="h-6 w-6 text-blue-400 mr-2" />
+                  Микроскопия
+                </h4>
+                <ul className="text-blue-200 space-y-2">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Металлографические микроскопы
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Электронные микроскопы
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Анализ структуры материалов
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Микроскопия</h3>
-              <p className="text-blue-200 leading-relaxed">
-                Металлографические и электронные микроскопы для анализа структуры материалов
-              </p>
-            </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/20">
-              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Icon name="Activity" className="h-8 w-8 text-green-300" />
+              <div>
+                <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
+                  <Icon name="Activity" className="h-6 w-6 text-green-400 mr-2" />
+                  Механические испытания
+                </h4>
+                <ul className="text-blue-200 space-y-2">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Испытания на растяжение
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Испытания на сжатие
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Ударная вязкость
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Твердость материалов
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Механические испытания</h3>
-              <p className="text-blue-200 leading-relaxed">
-                Испытания на растяжение, сжатие, изгиб, ударную вязкость и твердость
-              </p>
-            </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/20">
-              <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Icon name="Beaker" className="h-8 w-8 text-purple-300" />
+              <div>
+                <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
+                  <Icon name="Beaker" className="h-6 w-6 text-purple-400 mr-2" />
+                  Химический анализ
+                </h4>
+                <ul className="text-blue-200 space-y-2">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Спектральный анализ
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Хроматография
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 flex-shrink-0"></span>
+                    Химический состав
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Химический анализ</h3>
-              <p className="text-blue-200 leading-relaxed">
-                Спектральный анализ, хроматография, определение химического состава
-              </p>
             </div>
           </div>
         </div>
