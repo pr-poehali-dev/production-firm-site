@@ -19,35 +19,35 @@ const LabGallery = () => {
   const images = [
     {
       src: "/img/88832759-7cda-4b4b-b5f0-91a86550c258.jpg",
-      title: "Современная лаборатория",
-      description: "Основное лабораторное оборудование",
+      title: "Неразрушающий контроль",
+      description: "Методы контроля без повреждения изделий",
       equipment: [
-        "Металлографические микроскопы",
-        "Электронные микроскопы",
-        "Компьютерные станции",
-        "Лабораторная посуда"
+        "Ультразвуковой контроль",
+        "Магнитопорошковый контроль",
+        "Капиллярный контроль",
+        "Радиографический контроль"
       ]
     },
     {
       src: "/img/047e9a6f-cb03-4b50-8a9a-4d822c7842f7.jpg",
-      title: "Испытательное оборудование",
-      description: "Высокоточные измерительные приборы",
+      title: "Разрушающий контроль",
+      description: "Механические испытания материалов",
       equipment: [
-        "Спектрометры",
-        "Машины для испытания на твёрдость",
-        "Измерительные приборы",
-        "Подготовка образцов"
+        "Испытания на растяжение",
+        "Испытания на ударную вязкость",
+        "Определение твердости",
+        "Металлографические исследования"
       ]
     },
     {
       src: "/img/729b24f3-aeb0-4470-bf78-c14fc3beced5.jpg",
-      title: "Химический анализ",
-      description: "Аналитическое оборудование",
+      title: "Прайс",
+      description: "Стоимость услуг лаборатории",
       equipment: [
-        "Хроматография",
-        "Аналитические весы",
-        "Пробирки с растворами",
-        "Безопасность оборудования"
+        "Скачать прайс-лист",
+        "Индивидуальные расценки",
+        "Система скидок",
+        "Консультации специалистов"
       ]
     }
   ];
@@ -62,7 +62,7 @@ const LabGallery = () => {
 
   return (
     <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-white/20">
-      <div className="relative h-96 overflow-hidden">
+      <div className="relative h-[500px] overflow-hidden">
         <img 
           src={images[currentImage].src}
           alt={images[currentImage].title}
@@ -106,9 +106,14 @@ const LabGallery = () => {
           <h3 className="text-2xl font-bold text-white mb-2">
             {images[currentImage].title}
           </h3>
-          <p className="text-blue-200 text-lg">
+          <p className="text-blue-200 text-lg mb-6">
             {images[currentImage].description}
           </p>
+          <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6">
+            <p className="text-white text-lg font-medium">
+              Проведение полного цикла испытаний основного материала и готовой продукции
+            </p>
+          </div>
         </div>
         
         {/* Image titles list with dropdown */}
@@ -585,78 +590,7 @@ const MainSections = () => {
 
           <LabGallery />
 
-          {/* Laboratory capabilities - simple list */}
-          <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">
-              Возможности лаборатории
-            </h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
-                  <Icon name="Microscope" className="h-6 w-6 text-blue-400 mr-2" />
-                  Микроскопия
-                </h4>
-                <ul className="text-blue-200 space-y-2">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Металлографические микроскопы
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Электронные микроскопы
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Анализ структуры материалов
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
-                  <Icon name="Activity" className="h-6 w-6 text-green-400 mr-2" />
-                  Механические испытания
-                </h4>
-                <ul className="text-blue-200 space-y-2">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Испытания на растяжение
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Испытания на сжатие
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Ударная вязкость
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Твердость материалов
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
-                  <Icon name="Beaker" className="h-6 w-6 text-purple-400 mr-2" />
-                  Химический анализ
-                </h4>
-                <ul className="text-blue-200 space-y-2">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Спектральный анализ
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Хроматография
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 flex-shrink-0"></span>
-                    Химический состав
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
