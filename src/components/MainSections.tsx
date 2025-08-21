@@ -18,7 +18,7 @@ const LabGallery = () => {
   
   const images = [
     {
-      src: "https://cdn.poehali.dev/files/cfcffbd7-1adf-4fca-a536-1c0010b30720.JPG",
+      src: "/img/88832759-7cda-4b4b-b5f0-91a86550c258.jpg",
       title: "Неразрушающий контроль",
       description: "Методы контроля без повреждения изделий",
       equipment: [
@@ -29,7 +29,7 @@ const LabGallery = () => {
       ]
     },
     {
-      src: "https://cdn.poehali.dev/files/e44f989b-e240-40fe-94b4-958c6a9e1136.JPG",
+      src: "/img/047e9a6f-cb03-4b50-8a9a-4d822c7842f7.jpg",
       title: "Разрушающий контроль",
       description: "Механические испытания материалов",
       equipment: [
@@ -40,7 +40,7 @@ const LabGallery = () => {
       ]
     },
     {
-      src: "https://cdn.poehali.dev/files/bdbd3507-fd24-467a-aa95-f6795b51c420.JPG",
+      src: "/img/729b24f3-aeb0-4470-bf78-c14fc3beced5.jpg",
       title: "Прайс",
       description: "Стоимость услуг лаборатории",
       equipment: [
@@ -577,17 +577,24 @@ const MainSections = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-6">
+            <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-sm">
               Центральная Заводская Лаборатория
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Проведение полного цикла испытаний основного материала и готовой продукции
+              Современная научно-исследовательская лаборатория с высокоточным оборудованием для комплексных испытаний
             </p>
           </div>
 
           <LabGallery />
 
-
+          {/* ЦЗЛ Logo in top left corner */}
+          <div className="absolute top-8 left-8 z-20">
+            <img 
+              src="https://cdn.poehali.dev/files/8d2a8ae4-3fbc-4548-ab4f-1a90a4444b5d.png" 
+              alt="Логотип ЦЗЛ" 
+              className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
         </div>
       </section>
 
