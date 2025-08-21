@@ -103,12 +103,6 @@ const LabGallery = () => {
       {/* Image info */}
       <div className="p-8">
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-white mb-2">
-            {images[currentImage].title}
-          </h3>
-          <p className="text-blue-200 text-lg mb-6">
-            {images[currentImage].description}
-          </p>
           <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6">
             <p className="text-white text-lg font-medium">
               Проведение полного цикла испытаний основного материала и готовой продукции
