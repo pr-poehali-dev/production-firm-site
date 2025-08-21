@@ -20,7 +20,7 @@ const LabGallery = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 5000); // Change image every 5 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -75,7 +75,8 @@ const LabGallery = () => {
         <img 
           src={images[currentImage].src}
           alt={images[currentImage].title}
-          className="w-full h-full object-cover transition-all duration-500"
+          className="w-full h-full object-cover transition-all duration-1000 ease-in-out transform"
+          key={currentImage}
         />
         <div className="absolute inset-0 bg-black/20"></div>
         
