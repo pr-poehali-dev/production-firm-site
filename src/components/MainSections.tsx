@@ -129,8 +129,10 @@ const LabGallery = () => {
               <p className="text-blue-300 text-sm">{image.description}</p>
               
               {/* Dropdown for first item only */}
-              {index === 0 && isHovered && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white/15 backdrop-blur-sm rounded-lg p-4 border border-white/20 z-10 shadow-xl">
+              {index === 0 && (
+                <div className={`absolute top-full left-0 right-0 mt-2 bg-white/15 backdrop-blur-sm rounded-lg p-4 border border-white/20 z-10 shadow-xl transition-all duration-300 ${
+                  isHovered ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
+                }`}>
                   <div className="text-left">
                     {image.equipment?.map((item, idx) => (
                       <div key={idx} className="text-blue-200 text-sm mb-1 flex items-center">

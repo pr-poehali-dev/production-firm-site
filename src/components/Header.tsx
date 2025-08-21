@@ -75,7 +75,7 @@ const Header = () => {
               className="text-white hover:text-blue-300 transition-all duration-300 transform hover:scale-110 p-2 hover:bg-white/10 rounded-full"
             >
               <img 
-                src="https://cdn.poehali.dev/files/2db7d09a-e776-4f3f-9fa1-de9316df4520.png" 
+                src="https://cdn.poehali.dev/files/a7a15e81-fdbd-429f-af23-e693bf52bc10.png" 
                 alt="ВКонтакте" 
                 className="h-6 w-6 object-contain"
               />
