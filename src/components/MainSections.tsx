@@ -127,25 +127,19 @@ const LabGallery = () => {
                   : 'bg-white/5 hover:bg-white/10'
               }`}
               onClick={() => setCurrentImage(index)}
-              onMouseEnter={() => index === 0 && setIsHovered(true)}
-              onMouseLeave={() => index === 0 && setIsHovered(false)}
+
             >
               <h4 className="text-white font-semibold mb-1">{image.title}</h4>
               <p className="text-blue-300 text-sm">{image.description}</p>
               
-              {/* Dropdown for first item only */}
-              {index === 0 && (
-                <div className={`absolute top-full left-0 right-0 mt-2 bg-white/15 backdrop-blur-sm rounded-lg p-4 border border-white/20 z-10 shadow-xl transition-all duration-300 ${
-                  isHovered ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
-                }`}>
-                  <div className="text-left">
-                    {image.equipment?.map((item, idx) => (
-                      <div key={idx} className="text-blue-200 text-sm mb-1 flex items-center">
-                        <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
+              {/* Static lists for first two items */}
+              {(index === 0 || index === 1) && (
+                <div className="mt-4 text-left">
+                  {image.equipment?.map((item, idx) => (
+                    <div key={idx} className="text-blue-200 text-sm mb-1">
+                      • {item}
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
