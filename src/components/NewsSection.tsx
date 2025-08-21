@@ -35,9 +35,7 @@ const NewsSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
                   <Badge className="mb-3 bg-blue-600 text-white">Производство</Badge>
-                  <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">
-                    Введение в эксплуатацию нового механообрабатывающего цеха в составе предприятия, увеличение производственно-технологических мощностей и новые рабочие места
-                  </h3>
+                  <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">Введение в эксплуатацию нового механообрабатывающего цеха в составе предприятия, увеличение производственно-технологических мощностей и новые рабочие места.</h3>
                   <p className="text-blue-100 text-sm drop-shadow">8 Августа 2025</p>
                 </div>
               </div>
