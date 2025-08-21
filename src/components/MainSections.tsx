@@ -70,8 +70,8 @@ const LabGallery = () => {
   };
 
   return (
-    <div className="w-full">
-      <div className="relative h-[600px] overflow-hidden rounded-2xl shadow-2xl">
+    <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-white/20">
+      <div className="relative h-[500px] overflow-hidden">
         <img 
           src={images[currentImage].src}
           alt={images[currentImage].title}
@@ -110,22 +110,18 @@ const LabGallery = () => {
         </div>
       </div>
       
-      
-      {/* Only main text overlay */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-8">
+      {/* Image info */}
+      <div className="p-8">
         <div className="text-center">
-          <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6 backdrop-blur-sm">
+          <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6">
             <p className="text-white text-lg font-medium">
               Проведение полного цикла испытаний основного материала и готовой продукции.
             </p>
           </div>
         </div>
-      </div>
-      
-      {/* Lab details below the image */}
-      <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 shadow-xl">
+        
         {/* Main control types */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="mt-8 grid md:grid-cols-2 gap-8">
           {images.slice(0, 2).map((image, index) => (
             <div 
               key={index}
@@ -588,16 +584,14 @@ const MainSections = () => {
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
         </div>
-        <div className="relative z-10">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-sm">
-                Центральная Заводская Лаборатория
-              </h2>
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                Современная научно-исследовательская лаборатория с высокоточным оборудованием для комплексных испытаний
-              </p>
-            </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-sm">
+              Центральная Заводская Лаборатория
+            </h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              Современная научно-исследовательская лаборатория с высокоточным оборудованием для комплексных испытаний
+            </p>
           </div>
 
           <LabGallery />
