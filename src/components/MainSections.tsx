@@ -14,7 +14,7 @@ import Icon from "@/components/ui/icon";
 const LabGallery = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
-  const [isHovered, setIsHovered] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
   
   const images = [
     {
@@ -116,28 +116,33 @@ const LabGallery = () => {
           </div>
         </div>
         
-        {/* Image titles list with dropdown */}
-        <div className="mt-8 grid md:grid-cols-2 gap-4">
+        {/* Main control types */}
+        <div className="mt-8 grid md:grid-cols-2 gap-8">
           {images.slice(0, 2).map((image, index) => (
             <div 
               key={index}
-              className={`relative text-center p-4 rounded-lg transition-all duration-300 cursor-pointer ${
-                index === currentImage 
-                  ? 'bg-blue-500/20 border border-blue-400/30' 
-                  : 'bg-white/5 hover:bg-white/10'
-              }`}
-              onClick={() => setCurrentImage(index)}
+              className="relative text-center"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(-1)}
             >
-              <h4 className="text-white font-semibold mb-1">{image.title}</h4>
-              <p className="text-blue-300 text-sm">{image.description}</p>
+              <h3 className="text-3xl font-bold text-white mb-4 uppercase tracking-wide">
+                {image.title}
+              </h3>
               
-              {/* Static lists for first two items */}
-              <div className="mt-4 text-left">
-                {image.equipment?.map((item, idx) => (
-                  <div key={idx} className="text-blue-200 text-sm mb-1">
-                    • {item}
-                  </div>
-                ))}
+              {/* Dropdown list on hover */}
+              <div className={`transition-all duration-300 ${
+                hoveredIndex === index
+                  ? 'opacity-100 visible transform translate-y-0' 
+                  : 'opacity-0 invisible transform -translate-y-2'
+              } bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-xl`}>
+                <div className="text-left space-y-2">
+                  {image.equipment?.map((item, idx) => (
+                    <div key={idx} className="text-blue-200 text-sm flex items-center">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
