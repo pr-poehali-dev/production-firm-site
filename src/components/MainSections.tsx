@@ -587,14 +587,7 @@ const MainSections = () => {
 
           <LabGallery />
 
-          {/* ЦЗЛ Logo in top left corner */}
-          <div className="absolute top-8 left-8 z-20">
-            <img 
-              src="https://cdn.poehali.dev/files/8d2a8ae4-3fbc-4548-ab4f-1a90a4444b5d.png" 
-              alt="Логотип ЦЗЛ" 
-              className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-            />
-          </div>
+
         </div>
       </section>
 
