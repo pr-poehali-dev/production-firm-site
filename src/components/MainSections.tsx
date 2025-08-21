@@ -578,7 +578,7 @@ const MainSections = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-sm">
-              Центральная заводская лаборатория
+              Центральная Заводская Лаборатория
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Современная научно-исследовательская лаборатория с высокоточным оборудованием для комплексных испытаний
@@ -587,7 +587,14 @@ const MainSections = () => {
 
           <LabGallery />
 
-
+          {/* ЦЗЛ Logo in bottom left corner */}
+          <div className="absolute bottom-8 left-8 z-20">
+            <img 
+              src="https://cdn.poehali.dev/files/8d2a8ae4-3fbc-4548-ab4f-1a90a4444b5d.png" 
+              alt="Логотип ЦЗЛ" 
+              className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
         </div>
       </section>
 
