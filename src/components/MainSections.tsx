@@ -105,7 +105,7 @@ const LabGallery = () => {
         <div className="text-center">
           <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6">
             <p className="text-white text-lg font-medium">
-              Проведение полного цикла испытаний основного материала и готовой продукции
+              Проведение полного цикла испытаний основного материала и готовой продукции.
             </p>
           </div>
         </div>
