@@ -72,9 +72,9 @@ const Header = () => {
               href="https://vk.com/pfoka" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-300 transition-all duration-300 transform hover:scale-110 p-2 hover:bg-white/10 rounded-full"
+              className="text-white hover:text-blue-300 transition-all duration-300 transform hover:scale-110 px-3 py-2 hover:bg-white/10 rounded-full font-bold text-sm"
             >
-              <Icon name="Github" className="h-6 w-6" />
+              ВК
             </a>
             <a 
               href="https://t.me/pfoka" 
