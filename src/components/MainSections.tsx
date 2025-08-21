@@ -111,16 +111,19 @@ const LabGallery = () => {
       </div>
       
       
-      {/* Image info overlay */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent p-8">
-        <div className="text-center mb-6">
+      {/* Only main text overlay */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-8">
+        <div className="text-center">
           <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6 backdrop-blur-sm">
             <p className="text-white text-lg font-medium">
               Проведение полного цикла испытаний основного материала и готовой продукции.
             </p>
           </div>
         </div>
-        
+      </div>
+      
+      {/* Lab details below the image */}
+      <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 shadow-xl">
         {/* Main control types */}
         <div className="grid md:grid-cols-2 gap-8">
           {images.slice(0, 2).map((image, index) => (
@@ -149,7 +152,7 @@ const LabGallery = () => {
         {/* Price button in bottom right corner */}
         <div className="flex justify-end mt-6">
           <div 
-            className={`text-center p-3 rounded-lg transition-all duration-300 cursor-pointer bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-400/30 hover:from-green-600/30 hover:to-blue-600/30 max-w-xs backdrop-blur-sm ${
+            className={`text-center p-3 rounded-lg transition-all duration-300 cursor-pointer bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-400/30 hover:from-green-600/30 hover:to-blue-600/30 max-w-xs ${
               currentImage === 2 ? 'ring-2 ring-green-400/50' : ''
             }`}
             onClick={() => setCurrentImage(2)}
