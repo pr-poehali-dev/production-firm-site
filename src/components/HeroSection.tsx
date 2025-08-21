@@ -16,9 +16,13 @@ const HeroSection = () => {
         }}
       ></div>
       <div className="container mx-auto px-4 text-center relative z-30">
-        <h2 className="text-6xl font-bold mb-8 animate-fade-in drop-shadow-lg">
-          Предприятие ОКА
-        </h2>
+        <div className="relative mb-8">
+          <img 
+            src="https://cdn.poehali.dev/files/2e5fe645-05d4-4850-88d8-aaf74d65ca90.png" 
+            alt="Предприятие ОКА" 
+            className="h-96 mx-auto drop-shadow-lg animate-fade-in"
+          />
+        </div>
         <p className="text-xl mb-12 max-w-3xl mx-auto opacity-95 leading-relaxed drop-shadow-md">
           Разработка и изготовление нестандартных элементов трубопроводов для
           атомных станций, военной промышленности, нефтяной, газовой и
