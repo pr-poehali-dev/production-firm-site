@@ -125,7 +125,7 @@ const LabGallery = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-xl">
                 <div className="text-left space-y-2">
                   {image.equipment?.map((item, idx) => (
-                    <div key={idx} className="text-blue-200 text-sm flex items-center">
+                    <div key={idx} className="text-white text-sm flex items-center">
                       <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
                       {item}
                     </div>
