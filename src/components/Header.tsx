@@ -7,9 +7,14 @@ const Header = () => {
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
       </div>
-      <div className="container mx-auto px-4 py-4 relative z-10">
+      <div className="container mx-auto px-4 py-6 relative z-10">
         <div className="flex items-center justify-between">
-          <div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="https://cdn.poehali.dev/files/a3990dbc-3b26-4517-9596-4282f0bdf140.png" 
+              alt="ПФ ОКА логотип" 
+              className="h-14 w-14 object-contain"
+            />
             <h1 className="text-3xl font-bold text-white">ПФ ОКА</h1>
           </div>
           <nav className="hidden md:flex space-x-8">
