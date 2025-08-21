@@ -38,9 +38,7 @@ const NewsSection = () => {
                   <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">
                     Введение в эксплуатацию нового механообрабатывающего цеха в составе предприятия, увеличение производственно-технологических мощностей и новые рабочие места
                   </h3>
-                  <p className="text-blue-100 text-sm drop-shadow">
-                    15 июля 2024
-                  </p>
+                  <p className="text-blue-100 text-sm drop-shadow">8 Августа 2025</p>
                 </div>
               </div>
               <div className="p-6">
