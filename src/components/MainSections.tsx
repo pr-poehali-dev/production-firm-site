@@ -112,7 +112,8 @@ const LabGallery = () => {
       
       {/* Image info */}
       <div className="p-8">
-        <div className="text-center">
+        {/* Main text moved from photo */}
+        <div className="text-center mb-8">
           <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6">
             <p className="text-white text-lg font-medium">
               Проведение полного цикла испытаний основного материала и готовой продукции.
@@ -121,7 +122,7 @@ const LabGallery = () => {
         </div>
         
         {/* Main control types */}
-        <div className="mt-8 grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {images.slice(0, 2).map((image, index) => (
             <div 
               key={index}
