@@ -70,8 +70,8 @@ const LabGallery = () => {
   };
 
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-white/20">
-      <div className="relative h-[500px] overflow-hidden">
+    <div className="w-full">
+      <div className="relative h-[600px] overflow-hidden rounded-2xl shadow-2xl">
         <img 
           src={images[currentImage].src}
           alt={images[currentImage].title}
@@ -110,10 +110,11 @@ const LabGallery = () => {
         </div>
       </div>
       
-      {/* Image info */}
-      <div className="p-8">
-        <div className="text-center">
-          <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6">
+      
+      {/* Image info overlay */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent p-8">
+        <div className="text-center mb-6">
+          <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6 backdrop-blur-sm">
             <p className="text-white text-lg font-medium">
               Проведение полного цикла испытаний основного материала и готовой продукции.
             </p>
@@ -121,7 +122,7 @@ const LabGallery = () => {
         </div>
         
         {/* Main control types */}
-        <div className="mt-8 grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {images.slice(0, 2).map((image, index) => (
             <div 
               key={index}
@@ -148,7 +149,7 @@ const LabGallery = () => {
         {/* Price button in bottom right corner */}
         <div className="flex justify-end mt-6">
           <div 
-            className={`text-center p-3 rounded-lg transition-all duration-300 cursor-pointer bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-400/30 hover:from-green-600/30 hover:to-blue-600/30 max-w-xs ${
+            className={`text-center p-3 rounded-lg transition-all duration-300 cursor-pointer bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-400/30 hover:from-green-600/30 hover:to-blue-600/30 max-w-xs backdrop-blur-sm ${
               currentImage === 2 ? 'ring-2 ring-green-400/50' : ''
             }`}
             onClick={() => setCurrentImage(2)}
@@ -584,14 +585,16 @@ const MainSections = () => {
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-sm">
-              Центральная Заводская Лаборатория
-            </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Современная научно-исследовательская лаборатория с высокоточным оборудованием для комплексных испытаний
-            </p>
+        <div className="relative z-10">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-sm">
+                Центральная Заводская Лаборатория
+              </h2>
+              <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                Современная научно-исследовательская лаборатория с высокоточным оборудованием для комплексных испытаний
+              </p>
+            </div>
           </div>
 
           <LabGallery />
