@@ -117,8 +117,8 @@ const LabGallery = () => {
         </div>
         
         {/* Image titles list with dropdown */}
-        <div className="mt-8 grid md:grid-cols-3 gap-4">
-          {images.map((image, index) => (
+        <div className="mt-8 grid md:grid-cols-2 gap-4">
+          {images.slice(0, 2).map((image, index) => (
             <div 
               key={index}
               className={`relative text-center p-4 rounded-lg transition-all duration-300 cursor-pointer ${
@@ -127,23 +127,33 @@ const LabGallery = () => {
                   : 'bg-white/5 hover:bg-white/10'
               }`}
               onClick={() => setCurrentImage(index)}
-
             >
               <h4 className="text-white font-semibold mb-1">{image.title}</h4>
               <p className="text-blue-300 text-sm">{image.description}</p>
               
               {/* Static lists for first two items */}
-              {(index === 0 || index === 1) && (
-                <div className="mt-4 text-left">
-                  {image.equipment?.map((item, idx) => (
-                    <div key={idx} className="text-blue-200 text-sm mb-1">
-                      • {item}
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div className="mt-4 text-left">
+                {image.equipment?.map((item, idx) => (
+                  <div key={idx} className="text-blue-200 text-sm mb-1">
+                    • {item}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
+        </div>
+        
+        {/* Price button in bottom right corner */}
+        <div className="flex justify-end mt-6">
+          <div 
+            className={`text-center p-3 rounded-lg transition-all duration-300 cursor-pointer bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-400/30 hover:from-green-600/30 hover:to-blue-600/30 max-w-xs ${
+              currentImage === 2 ? 'ring-2 ring-green-400/50' : ''
+            }`}
+            onClick={() => setCurrentImage(2)}
+          >
+            <h4 className="text-white font-semibold mb-1">{images[2].title}</h4>
+            <p className="text-green-300 text-sm">{images[2].description}</p>
+          </div>
         </div>
       </div>
     </div>
