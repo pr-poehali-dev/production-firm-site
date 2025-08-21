@@ -20,7 +20,7 @@ const HeroSection = () => {
           <img 
             src="https://cdn.poehali.dev/files/d9bc49c4-dde1-468a-87a4-3375dfd7f59c.png" 
             alt="Предприятие ОКА" 
-            className="h-96 mx-auto drop-shadow-lg animate-fade-in"
+            className="h-48 mx-auto drop-shadow-lg animate-fade-in"
           />
         </div>
         <p className="text-xl mb-12 max-w-3xl mx-auto opacity-95 leading-relaxed drop-shadow-md">
