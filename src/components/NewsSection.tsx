@@ -28,15 +28,15 @@ const NewsSection = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl border border-white/20">
               <div className="relative h-80">
                 <img 
-                  src="/img/70995ca0-b3a0-4761-a4e6-be3dc074c550.jpg" 
-                  alt="Новый производственный комплекс" 
+                  src="https://cdn.poehali.dev/files/efb54619-05e8-44a9-ae95-b37d2856e902.jpg" 
+                  alt="Механообрабатывающий цех" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
                   <Badge className="mb-3 bg-blue-600 text-white">Производство</Badge>
                   <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">
-                    Запуск нового производственного комплекса
+                    Введение в эксплуатацию нового механообрабатывающего цеха в составе предприятия, увеличение производственно-технологических мощностей и новые рабочие места
                   </h3>
                   <p className="text-blue-100 text-sm drop-shadow">
                     15 июля 2024
@@ -45,9 +45,7 @@ const NewsSection = () => {
               </div>
               <div className="p-6">
                 <p className="text-white/90 leading-relaxed mb-4">
-                  Открыт новый высокотехнологичный производственный комплекс для изготовления 
-                  трубопроводной арматуры повышенной надежности. Инвестиции составили более 
-                  500 млн рублей, создано 150 новых рабочих мест.
+                  Завершен основной этап строительно-монтажных работ по сооружению механического цеха #5 и введение его в промышленную эксплуатацию, что по праву является главной новостью этого года!
                 </p>
                 <Button variant="outline" className="bg-transparent border-blue-400 text-blue-300 hover:bg-blue-600 hover:text-white">
                   Читать далее
