@@ -108,18 +108,21 @@ const LabGallery = () => {
             />
           ))}
         </div>
+        
+        {/* Static text overlay on photo */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-8">
+          <div className="text-center">
+            <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6 backdrop-blur-sm">
+              <p className="text-white text-lg font-medium">
+                Проведение полного цикла испытаний основного материала и готовой продукции.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       
       {/* Image info */}
       <div className="p-8">
-        {/* Main text moved from photo */}
-        <div className="text-center mb-8">
-          <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-6">
-            <p className="text-white text-lg font-medium">
-              Проведение полного цикла испытаний основного материала и готовой продукции.
-            </p>
-          </div>
-        </div>
         
         {/* Main control types */}
         <div className="grid md:grid-cols-2 gap-8">
