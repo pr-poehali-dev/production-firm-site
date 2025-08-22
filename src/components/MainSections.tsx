@@ -70,7 +70,7 @@ const LabGallery = () => {
   };
 
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-white/20">
+    <div className="w-full">
       <div className="relative h-[500px] overflow-hidden">
         <img 
           src={images[currentImage].src}
@@ -122,7 +122,7 @@ const LabGallery = () => {
       </div>
       
       {/* Image info */}
-      <div className="p-8">
+      <div className="container mx-auto px-4 py-8">
         
         {/* Main control types */}
         <div className="grid md:grid-cols-2 gap-8">
@@ -597,9 +597,14 @@ const MainSections = () => {
               Современная научно-исследовательская лаборатория с высокоточным оборудованием для комплексных испытаний
             </p>
           </div>
+        </div>
 
+        {/* Full width gallery */}
+        <div className="w-full">
           <LabGallery />
+        </div>
 
+        <div className="container mx-auto px-4 relative z-10">
 
         </div>
       </section>
