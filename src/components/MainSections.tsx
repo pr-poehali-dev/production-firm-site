@@ -71,7 +71,7 @@ const LabGallery = () => {
 
   return (
     <div className="w-full">
-      <div className="relative h-[500px] overflow-hidden">
+      <div className="relative h-[600px] overflow-hidden">
         <img 
           src={images[currentImage].src}
           alt={images[currentImage].title}
