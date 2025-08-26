@@ -102,80 +102,21 @@ const News = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-      {/* Header */}
-      <header className="bg-white/5 backdrop-blur-sm shadow-sm border-b border-white/10 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
-        </div>
-        <div className="container mx-auto px-4 py-6 relative z-10">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-              <img 
-                src="https://cdn.poehali.dev/files/a3990dbc-3b26-4517-9596-4282f0bdf140.png" 
-                alt="ПФ ОКА логотип" 
-                className="h-14 w-14 object-contain"
-              />
-              <h1 className="text-3xl font-bold text-white">ПФ ОКА</h1>
-            </Link>
-            <nav className="hidden md:flex space-x-8">
-              <Link
-                to="/"
-                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-              >
-                Главная
-              </Link>
-              <a
-                href="/#news"
-                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-              >
-                Новости
-              </a>
-              <a
-                href="/#products"
-                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-              >
-                Продукция
-              </a>
-              <a
-                href="/#production"
-                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-              >
-                Производство
-              </a>
-              <a
-                href="/#quality"
-                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-              >
-                Качество
-              </a>
-              <a
-                href="/#services"
-                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-              >
-                Услуги
-              </a>
-              <a
-                href="/#geography"
-                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-              >
-                География
-              </a>
-              <a
-                href="/#contacts"
-                className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-              >
-                Контакты
-              </a>
-            </nav>
-            <Button className="transform hover:scale-105 transition-transform duration-300">
-              Связаться
-            </Button>
-          </div>
-        </div>
-      </header>
+      {/* Back Button */}
+      <div className="fixed top-6 left-6 z-50">
+        <Link to="/">
+          <Button 
+            variant="outline"
+            className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300"
+          >
+            <Icon name="ArrowLeft" className="h-4 w-4 mr-2" />
+            На главную
+          </Button>
+        </Link>
+      </div>
 
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-20 pt-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
         </div>
