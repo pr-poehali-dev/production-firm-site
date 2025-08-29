@@ -306,102 +306,81 @@ const MainSections = () => {
               </div>
               
               <div className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-white/20">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="lg:w-1/2">
-                    <img 
-                      src={selectedProduct.image}
-                      alt={selectedProduct.title}
-                      className="w-full h-80 lg:h-full object-cover"
-                    />
+                <div className="p-8 lg:p-12">
+                  <div className="flex items-center mb-6">
+                    <Icon name={selectedProduct.icon} className="h-12 w-12 text-blue-400 mr-4" />
+                    <h3 className="text-3xl font-bold text-white">{selectedProduct.title}</h3>
                   </div>
-                  <div className="lg:w-1/2 p-8 lg:p-12">
-                    <div className="flex items-center mb-6">
-                      <Icon name={selectedProduct.icon} className="h-12 w-12 text-blue-400 mr-4" />
-                      <h3 className="text-3xl font-bold text-white">{selectedProduct.title}</h3>
+                  <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+                    {selectedProduct.fullDescription}
+                  </p>
+                  <div className="grid lg:grid-cols-2 gap-8 mb-8">
+                    <div>
+                      <h4 className="font-bold text-xl mb-4 text-white">Характеристики:</h4>
+                      <ul className="text-blue-200 space-y-2">
+                        {selectedProduct.characteristics.map((char, index) => (
+                          <li key={index} className="flex items-start">
+                            <Icon name="CheckCircle" className="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                            {char}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-                      {selectedProduct.fullDescription}
-                    </p>
-                    <div className="grid lg:grid-cols-2 gap-8 mb-8">
-                      <div>
-                        <h4 className="font-bold text-xl mb-4 text-white">Характеристики:</h4>
-                        <ul className="text-blue-200 space-y-2">
-                          {selectedProduct.characteristics.map((char, index) => (
-                            <li key={index} className="flex items-start">
-                              <Icon name="CheckCircle" className="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                              {char}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-xl mb-4 text-white">Применение:</h4>
-                        <ul className="text-blue-200 space-y-2">
-                          {selectedProduct.applications.map((app, index) => (
-                            <li key={index} className="flex items-start">
-                              <Icon name="Target" className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
-                              {app}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    <div>
+                      <h4 className="font-bold text-xl mb-4 text-white">Применение:</h4>
+                      <ul className="text-blue-200 space-y-2">
+                        {selectedProduct.applications.map((app, index) => (
+                          <li key={index} className="flex items-start">
+                            <Icon name="Target" className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
+                            {app}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <div className="flex flex-wrap gap-3">
-                      {selectedProduct.badges.map((badge, index) => (
-                        <Badge key={index} className={`${badge.color} text-white text-sm px-4 py-2`}>
-                          {badge.text}
-                        </Badge>
-                      ))}
-                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    {selectedProduct.badges.map((badge, index) => (
+                      <Badge key={index} className={`${badge.color} text-white text-sm px-4 py-2`}>
+                        {badge.text}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
           ) : (
             // Products List
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6 max-w-4xl mx-auto">
               {products.map((product) => (
                 <div 
                   key={product.id}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-white/20 group cursor-pointer hover:scale-105"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-white/20 group cursor-pointer"
                   onClick={() => setSelectedProduct(product)}
                 >
-                  <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-4 right-4">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Icon name="ArrowRight" className="h-6 w-6 text-white" />
+                  <div className="p-8">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <div className="flex items-center mb-4">
+                          <Icon name={product.icon} className="h-10 w-10 text-blue-400 mr-4" />
+                          <h3 className="text-2xl font-bold text-white">{product.title}</h3>
+                        </div>
+                        <p className="text-blue-200 leading-relaxed mb-6">
+                          {product.shortDescription}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {product.badges.slice(0, 3).map((badge, index) => (
+                            <Badge key={index} className={`${badge.color} text-white`}>
+                              {badge.text}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="ml-6 opacity-60 group-hover:opacity-100 transition-opacity">
+                        <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                          <Icon name="ArrowRight" className="h-6 w-6 text-white" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center mb-4">
-                      <Icon name={product.icon} className="h-8 w-8 text-blue-400 mr-3" />
-                      <h3 className="text-xl font-bold text-white">{product.title}</h3>
-                    </div>
-                    <p className="text-blue-200 text-sm leading-relaxed mb-4">
-                      {product.shortDescription}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {product.badges.slice(0, 2).map((badge, index) => (
-                        <Badge key={index} className={`${badge.color} text-white text-xs`}>
-                          {badge.text}
-                        </Badge>
-                      ))}
-                    </div>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      className="text-blue-300 hover:text-white hover:bg-white/10 p-0 group-hover:translate-x-1 transition-transform"
-                    >
-                      Подробнее
-                      <Icon name="ArrowRight" className="h-4 w-4 ml-1" />
-                    </Button>
                   </div>
                 </div>
               ))}
