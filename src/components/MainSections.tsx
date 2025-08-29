@@ -167,6 +167,111 @@ const LabGallery = () => {
 };
 
 const MainSections = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const products = [
+    {
+      id: 1,
+      title: "Арматура для АЭС",
+      icon: "Zap",
+      shortDescription: "Специализированная трубопроводная арматура для атомных электростанций",
+      image: "/img/f88074f2-8e76-4cbe-af88-7bf909da0362.jpg",
+      fullDescription: "Специализированная трубопроводная арматура для атомных электростанций с повышенной радиационной стойкостью",
+      characteristics: [
+        "Радиационная стойкость",
+        "Температуры: -60°C до +350°C",
+        "Давление до 16 МПа",
+        "Класс безопасности 1-4"
+      ],
+      applications: [
+        "Реакторные установки",
+        "Аварийное охлаждение",
+        "Парогенераторы",
+        "Очистка теплоносителя"
+      ],
+      badges: [
+        { text: "ГОСТ 356-80", color: "bg-blue-600" },
+        { text: "ОПБ-88/97", color: "bg-blue-600" },
+        { text: "Высокая надёжность", color: "bg-green-600" }
+      ]
+    },
+    {
+      id: 2,
+      title: "Военная арматура",
+      icon: "Wrench",
+      shortDescription: "Высокотехнологичная арматура для оборонно-промышленного комплекса",
+      image: "/img/e658f2ac-7b41-41d7-afd7-026f19912895.jpg",
+      fullDescription: "Высокотехнологичная арматура для оборонно-промышленного комплекса с повышенной стойкостью к экстремальным условиям",
+      characteristics: [
+        "Экстремальные условия",
+        "Антикоррозийные покрытия",
+        "Повышенная герметичность",
+        "Агрессивные среды"
+      ],
+      applications: [
+        "Системы жизнеобеспечения",
+        "Топливные магистрали",
+        "Гидравлические системы",
+        "Специальные установки"
+      ],
+      badges: [
+        { text: "ГОСТ Р 52720", color: "bg-blue-600" },
+        { text: "Гриф секретности", color: "bg-blue-600" },
+        { text: "Секретность", color: "bg-red-600" }
+      ]
+    },
+    {
+      id: 3,
+      title: "Нефтегазовая арматура",
+      icon: "Fuel",
+      shortDescription: "Промышленная арматура для нефтяной и газовой отрасли",
+      image: "/img/dfacf4ad-0e07-4716-aef5-48445543a993.jpg",
+      fullDescription: "Промышленная арматура для нефтяной и газовой отрасли с высокой стойкостью к нефтепродуктам и экстремальным давлениям",
+      characteristics: [
+        "Давление до 40 МПа",
+        "Температуры: -60°C до +450°C",
+        "Стойкость к нефтепродуктам",
+        "Антикоррозийная защита"
+      ],
+      applications: [
+        "Магистральные трубопроводы",
+        "Нефтеперерабатывающие заводы",
+        "Газоперекачивающие станции",
+        "Морские платформы"
+      ],
+      badges: [
+        { text: "API 6D", color: "bg-blue-600" },
+        { text: "ГОСТ 9544", color: "bg-blue-600" },
+        { text: "Износостойкость", color: "bg-orange-600" }
+      ]
+    },
+    {
+      id: 4,
+      title: "Химическая арматура",
+      icon: "Beaker",
+      shortDescription: "Специализированная арматура для химической промышленности",
+      image: "/img/29f7f330-5527-4873-88e3-4c16527458cf.jpg",
+      fullDescription: "Специализированная арматура для химической промышленности с высокой стойкостью к химически активным средам",
+      characteristics: [
+        "Химическая стойкость",
+        "Специальные уплотнения",
+        "Давление до 25 МПа",
+        "Температуры: -40°C до +400°C"
+      ],
+      applications: [
+        "Химические заводы",
+        "Производство удобрений",
+        "Фармацевтическая промышленность",
+        "Системы водоподготовки"
+      ],
+      badges: [
+        { text: "ГОСТ 12815", color: "bg-blue-600" },
+        { text: "DIN 3840", color: "bg-blue-600" },
+        { text: "Коррозионная стойкость", color: "bg-purple-600" }
+      ]
+    }
+  ];
+
   return (
     <>
       {/* Products Section */}
@@ -185,195 +290,123 @@ const MainSections = () => {
               объектов
             </p>
           </div>
-          <div className="space-y-8">
-            {/* АЭС */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-white/20">
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/2">
-                  <img 
-                    src="/img/f88074f2-8e76-4cbe-af88-7bf909da0362.jpg" 
-                    alt="Арматура для АЭС" 
-                    className="w-full h-64 md:h-full object-cover"
-                  />
-                </div>
-                <div className="md:w-1/2 p-8">
-                  <div className="flex items-center mb-4">
-                    <Icon name="Zap" className="h-10 w-10 text-blue-400 mr-3" />
-                    <h3 className="text-2xl font-bold text-white">Арматура для АЭС</h3>
+          {/* Products List or Detail View */}
+          {selectedProduct ? (
+            // Detail View
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-8">
+                <Button 
+                  onClick={() => setSelectedProduct(null)}
+                  variant="outline"
+                  className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+                >
+                  <Icon name="ArrowLeft" className="h-4 w-4 mr-2" />
+                  Назад к списку
+                </Button>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-white/20">
+                <div className="flex flex-col lg:flex-row">
+                  <div className="lg:w-1/2">
+                    <img 
+                      src={selectedProduct.image}
+                      alt={selectedProduct.title}
+                      className="w-full h-80 lg:h-full object-cover"
+                    />
                   </div>
-                  <p className="text-blue-100 mb-6">
-                    Специализированная трубопроводная арматура для атомных электростанций с повышенной радиационной стойкостью
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-2 text-white">Характеристики:</h4>
-                      <ul className="text-sm text-blue-200 space-y-1">
-                        <li>• Радиационная стойкость</li>
-                        <li>• Температуры: -60°C до +350°C</li>
-                        <li>• Давление до 16 МПа</li>
-                        <li>• Класс безопасности 1-4</li>
-                      </ul>
+                  <div className="lg:w-1/2 p-8 lg:p-12">
+                    <div className="flex items-center mb-6">
+                      <Icon name={selectedProduct.icon} className="h-12 w-12 text-blue-400 mr-4" />
+                      <h3 className="text-3xl font-bold text-white">{selectedProduct.title}</h3>
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-2 text-white">Применение:</h4>
-                      <ul className="text-sm text-blue-200 space-y-1">
-                        <li>• Реакторные установки</li>
-                        <li>• Аварийное охлаждение</li>
-                        <li>• Парогенераторы</li>
-                        <li>• Очистка теплоносителя</li>
-                      </ul>
+                    <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+                      {selectedProduct.fullDescription}
+                    </p>
+                    <div className="grid lg:grid-cols-2 gap-8 mb-8">
+                      <div>
+                        <h4 className="font-bold text-xl mb-4 text-white">Характеристики:</h4>
+                        <ul className="text-blue-200 space-y-2">
+                          {selectedProduct.characteristics.map((char, index) => (
+                            <li key={index} className="flex items-start">
+                              <Icon name="CheckCircle" className="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                              {char}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-xl mb-4 text-white">Применение:</h4>
+                        <ul className="text-blue-200 space-y-2">
+                          {selectedProduct.applications.map((app, index) => (
+                            <li key={index} className="flex items-start">
+                              <Icon name="Target" className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
+                              {app}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    <Badge variant="secondary" className="bg-blue-600 text-white">ГОСТ 356-80</Badge>
-                    <Badge variant="secondary" className="bg-blue-600 text-white">ОПБ-88/97</Badge>
-                    <Badge variant="default" className="bg-green-600 text-white">Высокая надёжность</Badge>
+                    <div className="flex flex-wrap gap-3">
+                      {selectedProduct.badges.map((badge, index) => (
+                        <Badge key={index} className={`${badge.color} text-white text-sm px-4 py-2`}>
+                          {badge.text}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* Военная */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-white/20">
-              <div className="flex flex-col md:flex-row-reverse">
-                <div className="md:w-1/2">
-                  <img 
-                    src="/img/e658f2ac-7b41-41d7-afd7-026f19912895.jpg" 
-                    alt="Военная арматура" 
-                    className="w-full h-64 md:h-full object-cover"
-                  />
-                </div>
-                <div className="md:w-1/2 p-8">
-                  <div className="flex items-center mb-4">
-                    <Icon name="Wrench" className="h-10 w-10 text-blue-400 mr-3" />
-                    <h3 className="text-2xl font-bold text-white">Военная арматура</h3>
-                  </div>
-                  <p className="text-blue-100 mb-6">
-                    Высокотехнологичная арматура для оборонно-промышленного комплекса с повышенной стойкостью к экстремальным условиям
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-2 text-white">Характеристики:</h4>
-                      <ul className="text-sm text-blue-200 space-y-1">
-                        <li>• Экстремальные условия</li>
-                        <li>• Антикоррозийные покрытия</li>
-                        <li>• Повышенная герметичность</li>
-                        <li>• Агрессивные среды</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2 text-white">Применение:</h4>
-                      <ul className="text-sm text-blue-200 space-y-1">
-                        <li>• Системы жизнеобеспечения</li>
-                        <li>• Топливные магистрали</li>
-                        <li>• Гидравлические системы</li>
-                        <li>• Специальные установки</li>
-                      </ul>
+          ) : (
+            // Products List
+            <div className="grid md:grid-cols-2 gap-8">
+              {products.map((product) => (
+                <div 
+                  key={product.id}
+                  className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-white/20 group cursor-pointer hover:scale-105"
+                  onClick={() => setSelectedProduct(product)}
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={product.image}
+                      alt={product.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 right-4">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <Icon name="ArrowRight" className="h-6 w-6 text-white" />
+                      </div>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    <Badge variant="secondary" className="bg-blue-600 text-white">ГОСТ Р 52720</Badge>
-                    <Badge variant="secondary" className="bg-blue-600 text-white">Гриф секретности</Badge>
-                    <Badge variant="default" className="bg-red-600 text-white">Секретность</Badge>
+                  <div className="p-6">
+                    <div className="flex items-center mb-4">
+                      <Icon name={product.icon} className="h-8 w-8 text-blue-400 mr-3" />
+                      <h3 className="text-xl font-bold text-white">{product.title}</h3>
+                    </div>
+                    <p className="text-blue-200 text-sm leading-relaxed mb-4">
+                      {product.shortDescription}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {product.badges.slice(0, 2).map((badge, index) => (
+                        <Badge key={index} className={`${badge.color} text-white text-xs`}>
+                          {badge.text}
+                        </Badge>
+                      ))}
+                    </div>
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      className="text-blue-300 hover:text-white hover:bg-white/10 p-0 group-hover:translate-x-1 transition-transform"
+                    >
+                      Подробнее
+                      <Icon name="ArrowRight" className="h-4 w-4 ml-1" />
+                    </Button>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-
-            {/* Нефтегаз */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-white/20">
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/2">
-                  <img 
-                    src="/img/dfacf4ad-0e07-4716-aef5-48445543a993.jpg" 
-                    alt="Нефтегазовая арматура" 
-                    className="w-full h-64 md:h-full object-cover"
-                  />
-                </div>
-                <div className="md:w-1/2 p-8">
-                  <div className="flex items-center mb-4">
-                    <Icon name="Fuel" className="h-10 w-10 text-blue-400 mr-3" />
-                    <h3 className="text-2xl font-bold text-white">Нефтегазовая арматура</h3>
-                  </div>
-                  <p className="text-blue-100 mb-6">
-                    Промышленная арматура для нефтяной и газовой отрасли с высокой стойкостью к нефтепродуктам и экстремальным давлениям
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-2 text-white">Характеристики:</h4>
-                      <ul className="text-sm text-blue-200 space-y-1">
-                        <li>• Давление до 40 МПа</li>
-                        <li>• Температуры: -60°C до +450°C</li>
-                        <li>• Стойкость к нефтепродуктам</li>
-                        <li>• Антикоррозийная защита</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2 text-white">Применение:</h4>
-                      <ul className="text-sm text-blue-200 space-y-1">
-                        <li>• Магистральные трубопроводы</li>
-                        <li>• Нефтеперерабатывающие заводы</li>
-                        <li>• Газоперекачивающие станции</li>
-                        <li>• Морские платформы</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    <Badge variant="secondary" className="bg-blue-600 text-white">API 6D</Badge>
-                    <Badge variant="secondary" className="bg-blue-600 text-white">ГОСТ 9544</Badge>
-                    <Badge variant="default" className="bg-orange-600 text-white">Износостойкость</Badge>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Химическая */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-white/20">
-              <div className="flex flex-col md:flex-row-reverse">
-                <div className="md:w-1/2">
-                  <img 
-                    src="/img/29f7f330-5527-4873-88e3-4c16527458cf.jpg" 
-                    alt="Химическая арматура" 
-                    className="w-full h-64 md:h-full object-cover"
-                  />
-                </div>
-                <div className="md:w-1/2 p-8">
-                  <div className="flex items-center mb-4">
-                    <Icon name="Beaker" className="h-10 w-10 text-blue-400 mr-3" />
-                    <h3 className="text-2xl font-bold text-white">Химическая арматура</h3>
-                  </div>
-                  <p className="text-blue-100 mb-6">
-                    Специализированная арматура для химической промышленности с высокой стойкостью к химически активным средам
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-2 text-white">Характеристики:</h4>
-                      <ul className="text-sm text-blue-200 space-y-1">
-                        <li>• Химическая стойкость</li>
-                        <li>• Специальные уплотнения</li>
-                        <li>• Давление до 25 МПа</li>
-                        <li>• Температуры: -40°C до +400°C</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2 text-white">Применение:</h4>
-                      <ul className="text-sm text-blue-200 space-y-1">
-                        <li>• Химические заводы</li>
-                        <li>• Производство удобрений</li>
-                        <li>• Фармацевтическая промышленность</li>
-                        <li>• Системы водоподготовки</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    <Badge variant="secondary" className="bg-blue-600 text-white">ГОСТ 12815</Badge>
-                    <Badge variant="secondary" className="bg-blue-600 text-white">DIN 3840</Badge>
-                    <Badge variant="default" className="bg-purple-600 text-white">Коррозионная стойкость</Badge>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
