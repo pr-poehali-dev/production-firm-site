@@ -1,95 +1,120 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
+  const navItems = [
+    { id: 'home', label: 'Главная' },
+    { id: 'about', label: 'О компании' },
+    { id: 'products', label: 'Продукция' },
+    { id: 'contact', label: 'Контакты' }
+  ];
+
   return (
-    <header className="bg-white/5 backdrop-blur-sm shadow-sm border-b border-white/10 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
-      </div>
-      <div className="container mx-auto px-4 py-6 relative z-10">
-        <div className="flex items-center justify-between">
+    <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
             <img 
               src="https://cdn.poehali.dev/files/a3990dbc-3b26-4517-9596-4282f0bdf140.png" 
-              alt="ПФ ОКА логотип" 
-              className="h-14 w-14 object-contain"
+              alt="НИИ Космические Технологии" 
+              className="h-8 w-8 object-contain"
             />
-            <h1 className="text-3xl font-bold text-white">ПФ ОКА</h1>
+            <span className="text-xl font-bold text-foreground">НИИ КТ</span>
           </div>
-          <nav className="hidden md:flex space-x-8">
-            <a
-              href="#news"
-              className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-            >
-              Новости
-            </a>
-            <a
-              href="#products"
-              className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-            >
-              Продукция
-            </a>
-            <a
-              href="#production"
-              className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-            >
-              Производство
-            </a>
-            <a
-              href="#laboratory"
-              className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-            >
-              Лаборатория
-            </a>
-            <a
-              href="#quality"
-              className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-            >
-              Качество
-            </a>
-            <a
-              href="#services"
-              className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-            >
-              Услуги
-            </a>
-            <a
-              href="#geography"
-              className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-            >
-              География
-            </a>
-            <a
-              href="#contacts"
-              className="text-white hover:text-blue-300 transition-all duration-300 text-lg font-medium tracking-wide hover:scale-105"
-            >
-              Контакты
-            </a>
+          
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+              >
+                {item.label}
+              </button>
+            ))}
           </nav>
+          
           <div className="flex items-center space-x-4">
-            <a 
-              href="https://vk.com/pfoka" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white hover:text-blue-300 transition-all duration-300 transform hover:scale-110 p-2 hover:bg-white/10 rounded-full"
+            <div className="hidden md:flex items-center space-x-2">
+              <a 
+                href="https://vk.com/pfoka" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+              >
+                <img 
+                  src="https://cdn.poehali.dev/files/2fe12838-4d5b-487e-8085-4f579e360be4.png" 
+                  alt="ВКонтакте" 
+                  className="h-4 w-4 object-contain"
+                />
+              </a>
+              <a 
+                href="https://t.me/pfoka" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+              >
+                <Icon name="Send" className="h-4 w-4" />
+              </a>
+            </div>
+            
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <img 
-                src="https://cdn.poehali.dev/files/2fe12838-4d5b-487e-8085-4f579e360be4.png" 
-                alt="ВКонтакте" 
-                className="h-6 w-6 object-contain"
-              />
-            </a>
-            <a 
-              href="https://t.me/pfoka" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white hover:text-blue-300 transition-all duration-300 transform hover:scale-110 p-2 hover:bg-white/10 rounded-full"
-            >
-              <Icon name="Send" className="h-6 w-6" />
-            </a>
+              <Icon name={isMenuOpen ? "X" : "Menu"} className="h-5 w-5" />
+            </Button>
           </div>
         </div>
+        
+        {isMenuOpen && (
+          <div className="md:hidden border-t border-border py-4">
+            <div className="flex flex-col space-y-2">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-left text-muted-foreground hover:text-foreground transition-colors py-2 px-4 rounded-md hover:bg-muted"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <div className="flex items-center space-x-4 px-4 pt-2 border-t border-border mt-4">
+                <a 
+                  href="https://vk.com/pfoka" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <img 
+                    src="https://cdn.poehali.dev/files/2fe12838-4d5b-487e-8085-4f579e360be4.png" 
+                    alt="ВКонтакте" 
+                    className="h-4 w-4 object-contain"
+                  />
+                </a>
+                <a 
+                  href="https://t.me/pfoka" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Icon name="Send" className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
