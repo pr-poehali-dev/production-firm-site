@@ -1,35 +1,21 @@
 import React from "react";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
+import HeroSection from "@/components/HeroSection";
+import NewsSection from "@/components/NewsSection";
+import MainSections from "@/components/MainSections";
 import Products from "@/components/Products";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       <Header />
+      <HeroSection />
+      <NewsSection />
+      <MainSections />
       
-      <main>
-        <section id="home" className="min-h-screen flex items-center pt-16">
-          <Hero />
-        </section>
-        
-        <section id="about" className="py-20">
-          <About />
-        </section>
-        
-        <section id="products">
-          <Products />
-        </section>
-        
-        <section id="contact" className="py-20">
-          <Contact />
-        </section>
-      </main>
-      
-      <Footer />
+      <section id="products">
+        <Products />
+      </section>
     </div>
   );
 };
