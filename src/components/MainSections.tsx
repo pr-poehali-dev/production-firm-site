@@ -818,7 +818,6 @@ const MainSections = () => {
             </div>
           </div>
         )}
-        </div>
       </section>
 
       {/* Services Section */}
