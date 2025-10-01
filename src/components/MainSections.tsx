@@ -168,6 +168,92 @@ const LabGallery = () => {
 
 const MainSections = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+
+  const certificates = [
+    {
+      id: 1,
+      title: "ISO 9001:2015",
+      description: "Система менеджмента качества",
+      image: "/img/0baa8a5f-9377-427f-a2cf-a182bf2ce19c.jpg",
+      color: "from-blue-50 to-white"
+    },
+    {
+      id: 2,
+      title: "ГОСТ Р 52720",
+      description: "Арматура трубопроводная",
+      image: "/img/8a87a0cb-6080-4049-9952-a30e2f2684d8.jpg",
+      color: "from-green-50 to-white"
+    },
+    {
+      id: 3,
+      title: "РД 26-07-23-99",
+      description: "Разрешительная документация",
+      image: "/img/07f15d93-0caa-4b12-8852-19c61a5321e9.jpg",
+      color: "from-purple-50 to-white"
+    },
+    {
+      id: 4,
+      title: "ASME B16.34",
+      description: "Международный стандарт",
+      image: "/img/414c82a5-7df3-4dc9-82ec-eaba4ad557f1.jpg",
+      color: "from-orange-50 to-white"
+    },
+    {
+      id: 5,
+      title: "API 6D",
+      description: "Нефтегазовое оборудование",
+      image: "/img/1240c562-4fda-45ad-a429-bef44ace8610.jpg",
+      color: "from-red-50 to-white"
+    },
+    {
+      id: 6,
+      title: "ОПБ-88/97",
+      description: "Атомная безопасность",
+      image: "/img/0baa8a5f-9377-427f-a2cf-a182bf2ce19c.jpg",
+      color: "from-yellow-50 to-white"
+    },
+    {
+      id: 7,
+      title: "DIN 3840",
+      description: "Европейский стандарт",
+      image: "/img/8a87a0cb-6080-4049-9952-a30e2f2684d8.jpg",
+      color: "from-indigo-50 to-white"
+    },
+    {
+      id: 8,
+      title: "ГОСТ 9544",
+      description: "Арматура трубопроводная",
+      image: "/img/07f15d93-0caa-4b12-8852-19c61a5321e9.jpg",
+      color: "from-cyan-50 to-white"
+    },
+    {
+      id: 9,
+      title: "ГОСТ 356-80",
+      description: "Атомная промышленность",
+      image: "/img/414c82a5-7df3-4dc9-82ec-eaba4ad557f1.jpg",
+      color: "from-pink-50 to-white"
+    },
+    {
+      id: 10,
+      title: "ГОСТ 12815",
+      description: "Химическая промышленность",
+      image: "/img/1240c562-4fda-45ad-a429-bef44ace8610.jpg",
+      color: "from-teal-50 to-white"
+    }
+  ];
+
+  const handlePrevCertificate = () => {
+    const currentIndex = certificates.findIndex(c => c.id === selectedCertificate);
+    const prevIndex = (currentIndex - 1 + certificates.length) % certificates.length;
+    setSelectedCertificate(certificates[prevIndex].id);
+  };
+
+  const handleNextCertificate = () => {
+    const currentIndex = certificates.findIndex(c => c.id === selectedCertificate);
+    const nextIndex = (currentIndex + 1) % certificates.length;
+    setSelectedCertificate(certificates[nextIndex].id);
+  };
 
   const products = [
     {
@@ -645,136 +731,93 @@ const MainSections = () => {
 
           {/* Certificates Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {/* Certificate 1 - ISO 9001 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/0baa8a5f-9377-427f-a2cf-a182bf2ce19c.jpg" 
-                alt="ISO 9001:2015 Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-blue-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">ISO 9001:2015</h4>
-                <p className="text-gray-600 text-xs">Система менеджмента качества</p>
+            {certificates.map((cert) => (
+              <div 
+                key={cert.id}
+                onClick={() => setSelectedCertificate(cert.id)}
+                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105 cursor-pointer"
+              >
+                <img 
+                  src={cert.image} 
+                  alt={`${cert.title} Certificate`}
+                  className="w-full h-48 object-cover"
+                />
+                <div className={`p-4 bg-gradient-to-br ${cert.color}`}>
+                  <h4 className="text-gray-800 font-bold text-sm mb-1">{cert.title}</h4>
+                  <p className="text-gray-600 text-xs">{cert.description}</p>
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
 
-            {/* Certificate 2 - ГОСТ */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/8a87a0cb-6080-4049-9952-a30e2f2684d8.jpg" 
-                alt="ГОСТ Р 52720 Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-green-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">ГОСТ Р 52720</h4>
-                <p className="text-gray-600 text-xs">Арматура трубопроводная</p>
+        {/* Certificate Modal */}
+        {selectedCertificate && (
+          <div 
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedCertificate(null)}
+          >
+            <div className="relative w-full max-w-5xl h-full flex items-center justify-center">
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedCertificate(null)}
+                className="absolute top-4 right-4 z-10 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+              >
+                <Icon name="X" className="h-6 w-6 text-white" />
+              </button>
+
+              {/* Previous Button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handlePrevCertificate();
+                }}
+                className="absolute left-4 z-10 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+              >
+                <Icon name="ChevronLeft" className="h-6 w-6 text-white" />
+              </button>
+
+              {/* Next Button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNextCertificate();
+                }}
+                className="absolute right-4 z-10 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+              >
+                <Icon name="ChevronRight" className="h-6 w-6 text-white" />
+              </button>
+
+              {/* Certificate Image */}
+              <div 
+                className="relative max-h-[90vh] max-w-full"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img 
+                  src={certificates.find(c => c.id === selectedCertificate)?.image}
+                  alt={certificates.find(c => c.id === selectedCertificate)?.title}
+                  className="max-h-[90vh] max-w-full w-auto h-auto object-contain rounded-lg shadow-2xl"
+                />
+                {/* Certificate Info */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <h3 className="text-white text-2xl font-bold mb-2">
+                    {certificates.find(c => c.id === selectedCertificate)?.title}
+                  </h3>
+                  <p className="text-blue-200">
+                    {certificates.find(c => c.id === selectedCertificate)?.description}
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* Certificate 3 - РД */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/07f15d93-0caa-4b12-8852-19c61a5321e9.jpg" 
-                alt="РД 26-07-23-99 Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-purple-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">РД 26-07-23-99</h4>
-                <p className="text-gray-600 text-xs">Разрешительная документация</p>
-              </div>
-            </div>
-
-            {/* Certificate 4 - ASME */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/414c82a5-7df3-4dc9-82ec-eaba4ad557f1.jpg" 
-                alt="ASME B16.34 Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-orange-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">ASME B16.34</h4>
-                <p className="text-gray-600 text-xs">Международный стандарт</p>
-              </div>
-            </div>
-
-            {/* Certificate 5 - API */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/1240c562-4fda-45ad-a429-bef44ace8610.jpg" 
-                alt="API 6D Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-red-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">API 6D</h4>
-                <p className="text-gray-600 text-xs">Нефтегазовое оборудование</p>
-              </div>
-            </div>
-
-            {/* Certificate 6 - ОПБ */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/0baa8a5f-9377-427f-a2cf-a182bf2ce19c.jpg" 
-                alt="ОПБ-88/97 Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-yellow-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">ОПБ-88/97</h4>
-                <p className="text-gray-600 text-xs">Атомная безопасность</p>
-              </div>
-            </div>
-
-            {/* Certificate 7 - DIN */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/8a87a0cb-6080-4049-9952-a30e2f2684d8.jpg" 
-                alt="DIN 3840 Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-indigo-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">DIN 3840</h4>
-                <p className="text-gray-600 text-xs">Европейский стандарт</p>
-              </div>
-            </div>
-
-            {/* Certificate 8 - ГОСТ 9544 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/07f15d93-0caa-4b12-8852-19c61a5321e9.jpg" 
-                alt="ГОСТ 9544 Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-cyan-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">ГОСТ 9544</h4>
-                <p className="text-gray-600 text-xs">Арматура трубопроводная</p>
-              </div>
-            </div>
-
-            {/* Certificate 9 - ГОСТ 356 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/414c82a5-7df3-4dc9-82ec-eaba4ad557f1.jpg" 
-                alt="ГОСТ 356-80 Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-pink-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">ГОСТ 356-80</h4>
-                <p className="text-gray-600 text-xs">Атомная промышленность</p>
-              </div>
-            </div>
-
-            {/* Certificate 10 - ГОСТ 12815 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105">
-              <img 
-                src="/img/1240c562-4fda-45ad-a429-bef44ace8610.jpg" 
-                alt="ГОСТ 12815 Certificate"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 bg-gradient-to-br from-teal-50 to-white">
-                <h4 className="text-gray-800 font-bold text-sm mb-1">ГОСТ 12815</h4>
-                <p className="text-gray-600 text-xs">Химическая промышленность</p>
+              {/* Image counter */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <span className="text-white text-sm">
+                  {certificates.findIndex(c => c.id === selectedCertificate) + 1} / {certificates.length}
+                </span>
               </div>
             </div>
           </div>
+        )}
         </div>
       </section>
 
