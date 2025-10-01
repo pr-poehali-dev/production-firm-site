@@ -639,47 +639,120 @@ const MainSections = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Качество</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Строгий контроль качества на всех этапах производства
+              Сертифицированное производство и контроль качества
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Сертификаты и стандарты
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="h-6 w-6 text-green-400" />
-                  <span className="text-white">ISO 9001:2015</span>
+
+          {/* Certificates Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {/* Certificate 1 - ISO 9001 */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-colors">
+                  <Icon name="Award" className="h-8 w-8 text-blue-300" />
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="h-6 w-6 text-green-400" />
-                  <span className="text-white">ГОСТ Р 52720-2007</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="h-6 w-6 text-green-400" />
-                  <span className="text-white">РД 26-07-23-99</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="h-6 w-6 text-green-400" />
-                  <span className="text-white">ASME B16.34</span>
-                </div>
+                <h4 className="text-white font-bold mb-2">ISO 9001:2015</h4>
+                <p className="text-blue-200 text-xs">Система менеджмента качества</p>
               </div>
             </div>
-            <div className="bg-blue-900/30 backdrop-blur-sm p-8 rounded-lg border border-white/20">
-              <h4 className="text-xl font-bold text-white mb-4">
-                Контроль качества
-              </h4>
-              <p className="text-blue-100 mb-6">
-                Каждое изделие проходит многоступенчатый контроль качества,
-                включая:
-              </p>
-              <ul className="space-y-2 text-sm text-blue-200">
-                <li>• Входной контроль материалов</li>
-                <li>• Промежуточный контроль производства</li>
-                <li>• Финальные испытания готовой продукции</li>
-                <li>• Оформление сертификатов соответствия</li>
-              </ul>
+
+            {/* Certificate 2 - ГОСТ */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-colors">
+                  <Icon name="ShieldCheck" className="h-8 w-8 text-green-300" />
+                </div>
+                <h4 className="text-white font-bold mb-2">ГОСТ Р 52720</h4>
+                <p className="text-blue-200 text-xs">Арматура трубопроводная</p>
+              </div>
+            </div>
+
+            {/* Certificate 3 - РД */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-colors">
+                  <Icon name="FileCheck" className="h-8 w-8 text-purple-300" />
+                </div>
+                <h4 className="text-white font-bold mb-2">РД 26-07-23-99</h4>
+                <p className="text-blue-200 text-xs">Разрешительная документация</p>
+              </div>
+            </div>
+
+            {/* Certificate 4 - ASME */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500/30 transition-colors">
+                  <Icon name="Medal" className="h-8 w-8 text-orange-300" />
+                </div>
+                <h4 className="text-white font-bold mb-2">ASME B16.34</h4>
+                <p className="text-blue-200 text-xs">Международный стандарт</p>
+              </div>
+            </div>
+
+            {/* Certificate 5 - API */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-colors">
+                  <Icon name="CheckCircle" className="h-8 w-8 text-red-300" />
+                </div>
+                <h4 className="text-white font-bold mb-2">API 6D</h4>
+                <p className="text-blue-200 text-xs">Нефтегазовое оборудование</p>
+              </div>
+            </div>
+
+            {/* Certificate 6 - ОПБ */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-yellow-500/30 transition-colors">
+                  <Icon name="Zap" className="h-8 w-8 text-yellow-300" />
+                </div>
+                <h4 className="text-white font-bold mb-2">ОПБ-88/97</h4>
+                <p className="text-blue-200 text-xs">Атомная безопасность</p>
+              </div>
+            </div>
+
+            {/* Certificate 7 - DIN */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-indigo-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-indigo-500/30 transition-colors">
+                  <Icon name="BadgeCheck" className="h-8 w-8 text-indigo-300" />
+                </div>
+                <h4 className="text-white font-bold mb-2">DIN 3840</h4>
+                <p className="text-blue-200 text-xs">Европейский стандарт</p>
+              </div>
+            </div>
+
+            {/* Certificate 8 - ГОСТ 9544 */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-cyan-500/30 transition-colors">
+                  <Icon name="Verified" className="h-8 w-8 text-cyan-300" />
+                </div>
+                <h4 className="text-white font-bold mb-2">ГОСТ 9544</h4>
+                <p className="text-blue-200 text-xs">Арматура трубопроводная</p>
+              </div>
+            </div>
+
+            {/* Certificate 9 - ГОСТ 356 */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-pink-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-pink-500/30 transition-colors">
+                  <Icon name="CircleCheckBig" className="h-8 w-8 text-pink-300" />
+                </div>
+                <h4 className="text-white font-bold mb-2">ГОСТ 356-80</h4>
+                <p className="text-blue-200 text-xs">Атомная промышленность</p>
+              </div>
+            </div>
+
+            {/* Certificate 10 - ГОСТ 12815 */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
+                  <Icon name="Star" className="h-8 w-8 text-teal-300" />
+                </div>
+                <h4 className="text-white font-bold mb-2">ГОСТ 12815</h4>
+                <p className="text-blue-200 text-xs">Химическая промышленность</p>
+              </div>
             </div>
           </div>
         </div>
