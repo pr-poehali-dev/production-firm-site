@@ -804,11 +804,16 @@ const MainSections = () => {
 
           {/* Certificates Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {displayedCertificates.map((cert) => (
+            {displayedCertificates.map((cert, index) => (
               <div 
                 key={cert.id}
                 onClick={() => setSelectedCertificate(cert.id)}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105 cursor-pointer"
+                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-105 cursor-pointer animate-in fade-in slide-in-from-bottom-4"
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                  animationDuration: '500ms',
+                  animationFillMode: 'backwards'
+                }}
               >
                 <img 
                   src={cert.image} 
@@ -825,13 +830,13 @@ const MainSections = () => {
 
           {/* Show More Button */}
           {!showAllCertificates && (
-            <div className="flex justify-center mt-12">
+            <div className="flex justify-center mt-12 animate-in fade-in slide-in-from-bottom-4" style={{ animationDelay: '600ms' }}>
               <Button
                 onClick={() => setShowAllCertificates(true)}
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                <Icon name="ChevronDown" className="h-5 w-5 mr-2" />
+                <Icon name="ChevronDown" className="h-5 w-5 mr-2 group-hover:translate-y-1 transition-transform" />
                 Показать все сертификаты ({certificates.length})
               </Button>
             </div>
