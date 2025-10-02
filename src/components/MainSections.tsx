@@ -169,6 +169,7 @@ const LabGallery = () => {
 const MainSections = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [showAllCertificates, setShowAllCertificates] = useState(false);
 
   const certificates = [
     {
@@ -240,8 +241,80 @@ const MainSections = () => {
       description: "Химическая промышленность",
       image: "/img/1240c562-4fda-45ad-a429-bef44ace8610.jpg",
       color: "from-teal-50 to-white"
+    },
+    {
+      id: 11,
+      title: "ТР ТС 032/2013",
+      description: "Технический регламент безопасности",
+      image: "/img/0baa8a5f-9377-427f-a2cf-a182bf2ce19c.jpg",
+      color: "from-emerald-50 to-white"
+    },
+    {
+      id: 12,
+      title: "ГОСТ 5762",
+      description: "Арматура промышленная",
+      image: "/img/8a87a0cb-6080-4049-9952-a30e2f2684d8.jpg",
+      color: "from-violet-50 to-white"
+    },
+    {
+      id: 13,
+      title: "EN 12516",
+      description: "Европейский норматив испытаний",
+      image: "/img/07f15d93-0caa-4b12-8852-19c61a5321e9.jpg",
+      color: "from-rose-50 to-white"
+    },
+    {
+      id: 14,
+      title: "ГОСТ 31294",
+      description: "Клапаны автоматические",
+      image: "/img/414c82a5-7df3-4dc9-82ec-eaba4ad557f1.jpg",
+      color: "from-lime-50 to-white"
+    },
+    {
+      id: 15,
+      title: "API 600",
+      description: "Стальная задвижка",
+      image: "/img/1240c562-4fda-45ad-a429-bef44ace8610.jpg",
+      color: "from-sky-50 to-white"
+    },
+    {
+      id: 16,
+      title: "ГОСТ 28343",
+      description: "Промышленная безопасность",
+      image: "/img/0baa8a5f-9377-427f-a2cf-a182bf2ce19c.jpg",
+      color: "from-amber-50 to-white"
+    },
+    {
+      id: 17,
+      title: "BS 5163",
+      description: "Британский стандарт",
+      image: "/img/8a87a0cb-6080-4049-9952-a30e2f2684d8.jpg",
+      color: "from-fuchsia-50 to-white"
+    },
+    {
+      id: 18,
+      title: "ГОСТ 33259",
+      description: "Сейсмостойкость оборудования",
+      image: "/img/07f15d93-0caa-4b12-8852-19c61a5321e9.jpg",
+      color: "from-stone-50 to-white"
+    },
+    {
+      id: 19,
+      title: "MSS SP-25",
+      description: "Стандарт арматуры США",
+      image: "/img/414c82a5-7df3-4dc9-82ec-eaba4ad557f1.jpg",
+      color: "from-slate-50 to-white"
+    },
+    {
+      id: 20,
+      title: "ГОСТ Р 54808",
+      description: "Клапаны предохранительные",
+      image: "/img/1240c562-4fda-45ad-a429-bef44ace8610.jpg",
+      color: "from-zinc-50 to-white"
     }
   ];
+
+  const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, 10);
 
   const handlePrevCertificate = () => {
     const currentIndex = certificates.findIndex(c => c.id === selectedCertificate);
@@ -731,7 +804,7 @@ const MainSections = () => {
 
           {/* Certificates Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {certificates.map((cert) => (
+            {displayedCertificates.map((cert) => (
               <div 
                 key={cert.id}
                 onClick={() => setSelectedCertificate(cert.id)}
@@ -749,6 +822,20 @@ const MainSections = () => {
               </div>
             ))}
           </div>
+
+          {/* Show More Button */}
+          {!showAllCertificates && (
+            <div className="flex justify-center mt-12">
+              <Button
+                onClick={() => setShowAllCertificates(true)}
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <Icon name="ChevronDown" className="h-5 w-5 mr-2" />
+                Показать все сертификаты ({certificates.length})
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Certificate Modal */}
