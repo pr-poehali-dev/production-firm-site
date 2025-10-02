@@ -314,7 +314,7 @@ const MainSections = () => {
     }
   ];
 
-  const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, 10);
+  const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, 5);
 
   const handlePrevCertificate = () => {
     const currentIndex = certificates.findIndex(c => c.id === selectedCertificate);
