@@ -828,19 +828,32 @@ const MainSections = () => {
             ))}
           </div>
 
-          {/* Show More Button */}
-          {!showAllCertificates && (
-            <div className="flex justify-center mt-12 animate-in fade-in slide-in-from-bottom-4" style={{ animationDelay: '600ms' }}>
-              <Button
-                onClick={() => setShowAllCertificates(true)}
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
-              >
-                <Icon name="ChevronDown" className="h-5 w-5 mr-2 group-hover:translate-y-1 transition-transform" />
-                Показать все сертификаты ({certificates.length})
-              </Button>
-            </div>
-          )}
+          {/* Show More/Less Button */}
+          <div className="flex justify-center mt-12">
+            {!showAllCertificates ? (
+              <div className="animate-in fade-in slide-in-from-bottom-4" style={{ animationDelay: '600ms' }}>
+                <Button
+                  onClick={() => setShowAllCertificates(true)}
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+                >
+                  <Icon name="ChevronDown" className="h-5 w-5 mr-2 group-hover:translate-y-1 transition-transform" />
+                  Показать все сертификаты ({certificates.length})
+                </Button>
+              </div>
+            ) : (
+              <div className="animate-in fade-in slide-in-from-top-4">
+                <Button
+                  onClick={() => setShowAllCertificates(false)}
+                  size="lg"
+                  className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+                >
+                  <Icon name="ChevronUp" className="h-5 w-5 mr-2 group-hover:-translate-y-1 transition-transform" />
+                  Скрыть дополнительные
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Certificate Modal */}
